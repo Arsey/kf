@@ -1,0 +1,6 @@
+services:
+    ens.BambukCms.admin.page:
+        class: BambukCms\PageBundle\Admin\PageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: BambukCms, label: Сторінки }
+        arguments: [null, BambukCms\PageBundle\Entity\Page, BambukCmsPageBundle:PageAdmin]

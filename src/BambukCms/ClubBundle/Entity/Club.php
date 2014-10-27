@@ -1,0 +1,361 @@
+<?php
+
+namespace BambukCms\ClubBundle\Entity;
+
+use Doctrine\Common\Collections\ArrayCollection;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Translatable\Translatable;
+use Gedmo\Translatable\TranslatableListener;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="club")
+ * @Gedmo\TranslationEntity(class="BambukCms\ClubBundle\Entity\ClubTranslation")
+ */
+
+class Club
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $phone;
+    
+    /**
+     * @ORM\Column(name="active", type="boolean", nullable=true)
+     */
+    protected $active;
+        
+    /**
+     * @ORM\Column(name="sort", type="integer")
+     */
+    private $sort = 0;
+    	
+	/**
+     * @ORM\ManyToOne(targetEntity="BambukCms\ClubBundle\Entity\City", inversedBy="city")
+     */
+	private $city;
+	
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(type="text", nullable=true)
+     */  
+    private $content;
+
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(name="content_code", type="text", nullable=true)
+     */
+    private $content_code;
+    
+   /**
+	 * @ORM\ManyToMany(targetEntity="BambukCms\PostBundle\Entity\Post", mappedBy="club")
+	 */
+	private $posts;
+    
+	
+   /**
+     *
+     * @ORM\OneToMany(targetEntity="BambukCms\ClubBundle\Entity\Salle", mappedBy="club", cascade={"all"})
+     * @ORM\OrderBy({"sort" = "ASC"})
+    */
+    
+	private $salles;
+	
+     /**
+     * @ORM\OneToMany(
+     *   targetEntity="BambukCms\ClubBundle\Entity\ClubTranslation",
+     *   mappedBy="object",
+     *   cascade={"persist", "remove"}
+     * )
+     */
+    private $translations;
+
+    
+    public function __construct()
+    {
+        $this->translations = new ArrayCollection();
+    }
+
+    public function getTranslations()
+    {
+        return $this->translations;
+    }
+
+    public function addTranslation(ClubTranslation $t)
+    {
+        if (!$this->translations->contains($t)) {
+            $this->translations[] = $t;
+            $t->setObject($this);
+        }
+    }
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return City
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    
+    
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    /**
+     * Remove translations
+     *
+     * @param \BambukCms\ClubBundle\Entity\ClubTranslation $translations
+     */
+    public function removeTranslation(\BambukCms\ClubBundle\Entity\ClubTranslation $translations)
+    {
+        $this->translations->removeElement($translations);
+    }
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     * @return Club
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string 
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     * @return Club
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean 
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Set sort
+     *
+     * @param integer $sort
+     * @return Club
+     */
+    public function setSort($sort)
+    {
+        $this->sort = $sort;
+
+        return $this;
+    }
+
+    /**
+     * Get sort
+     *
+     * @return integer 
+     */
+    public function getSort()
+    {
+        return $this->sort;
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     * @return Club
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string 
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * Set city
+     *
+     * @param \BambukCms\ClubBundle\Entity\City $city
+     * @return Club
+     */
+    public function setCity(\BambukCms\ClubBundle\Entity\City $city = null)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return \BambukCms\ClubBundle\Entity\City 
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Add posts
+     *
+     * @param \BambukCms\PostBundle\Entity\Post $posts
+     * @return Club
+     */
+    public function addPost(\BambukCms\PostBundle\Entity\Post $posts)
+    {
+        $this->posts[] = $posts;
+
+        return $this;
+    }
+
+    /**
+     * Remove posts
+     *
+     * @param \BambukCms\PostBundle\Entity\Post $posts
+     */
+    public function removePost(\BambukCms\PostBundle\Entity\Post $posts)
+    {
+        $this->posts->removeElement($posts);
+    }
+
+    /**
+     * Get posts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
+    /**
+     * Add salles
+     *
+     * @param \BambukCms\ClubBundle\Entity\Salle $salles
+     * @return Club
+     */
+    public function addSalle(\BambukCms\ClubBundle\Entity\Salle $salles)
+    {
+        $this->salles[] = $salles;
+
+        return $this;
+    }
+
+    /**
+     * Remove salles
+     *
+     * @param \BambukCms\ClubBundle\Entity\Salle $salles
+     */
+    public function removeSalle(\BambukCms\ClubBundle\Entity\Salle $salles)
+    {
+        $this->salles->removeElement($salles);
+    }
+
+    /**
+     * Get salles
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSalles()
+    {
+        return $this->salles;
+    }
+
+    /**
+     * Set content_code
+     *
+     * @param string $contentCode
+     * @return Club
+     */
+    public function setContentCode($contentCode)
+    {
+        $this->content_code = $contentCode;
+
+        return $this;
+    }
+
+    /**
+     * Get content_code
+     *
+     * @return string 
+     */
+    public function getContentCode()
+    {
+        return $this->content_code;
+    }
+}

@@ -1,0 +1,45 @@
+.post-content{
+    padding: 48px 24px;
+    
+    h1{
+        font-size: rem-calc(24);
+        line-height: em(24,32);
+        margin: 0 0 48px 0;
+    }
+    p, blockquote{
+        line-height: rem-calc(24);
+        margin-bottom: rem-calc(24);
+    }
+    blockquote{
+        border-left: 4px solid $darkblue;
+        color: $darkblue;
+        padding: 0 0 0 24px;
+        font-style: italic;
+        margin-left: 0;
+        margin-top: 48px;
+    }
+    img {
+        margin: 32px -24px;
+        max-width: calc(100% + 48px); // to compensate negative margin
+    }
+    p a {
+        text-decoration: none;
+        border-bottom: 1px dotted;
+        color:$darkblue;
+        font-weight: 700;
+        &::visited {
+            opacity: .5;
+        }
+    }
+    @media #{$medium} {
+        padding: 80px;
+        img {
+            margin: 96px -80px;
+            max-width: calc(100% + 161px);
+        }
+        blockquote{
+            margin-top: 96px;
+            padding: 24px 0 24px 36px;
+        }
+    }
+}

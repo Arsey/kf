@@ -1,0 +1,54 @@
+.showroom {
+    background: image-url('showroom/back_large.jpg') center top no-repeat;
+    background-size: cover;
+    
+    .tiles .tile{
+        width: 12.5%;
+        padding-top: 12.5%;
+        background-color: rgba(20, 15, 46, 0.6);
+        position: absolute;
+        top:0; 
+    }
+    .tile-1{
+        margin-top:12.5%;
+        left: 12.5%;
+    }
+    .tile-2{
+        right: 12.5%;
+    }
+    .tile-3{
+        margin-top:25%;
+        left: 50%;
+    }
+    .tile-4{
+        margin-top:25%;
+        left: 62.5%;
+    }
+    .tile-5{
+        margin-top:37.5%;
+        left: 37.5%;
+    }
+    
+    .tile-main {
+        width: 25%;
+        position: absolute;
+        padding-top: 25%;
+        height: 0;
+        top:0;
+        background: $black;
+        a{
+            @include fill-block;
+            color:white;
+            text-decoration: none;
+            text-align: center;
+            font-size: 24px;
+        }
+        left:50%;
+        &:first-child{
+            margin-top: 12.5%;
+            left:25%;
+        }
+    }
+}
+@import 'front';
+@import 'architectural'; 

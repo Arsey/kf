@@ -1,0 +1,249 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+#    - { resource: @ApplicationSonataProductBundle/Resources/config/product.yml }
+#    - { resource: sonata_product.yml }       
+                    
+personal_translations_widget:
+  languages:
+        ru: Російська
+
+
+framework:
+    #esi:             ~
+    fragments:       { path: /_fragment }
+    translator:       { fallback: uk }
+    secret:          "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+        #assets_version: SomeVersionScheme
+    default_locale:  uk
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:
+        # handler_id set to null will use default session handler from php.ini
+        handler_id:  ~
+    fragments:       ~
+    http_method_override: true
+
+# Twig Configuration
+twig:
+    cache:  false
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+
+# Assetic Configuration
+assetic:
+    debug:          "%kernel.debug%"
+    use_controller: false
+    bundles:        [FMElfinderBundle]
+    java: /usr/bin/java
+    filters:
+        cssrewrite: ~
+        uglifyjs2:
+            # the path to the uglifyjs executable
+            bin: /usr/bin/uglifyjs
+        uglifycss:
+            bin: /usr/bin/uglifycss 
+        
+fm_elfinder:
+    locale: %locale% # defaults to current request locale
+    editor: tinymce4 # other choices are tinymce or simple
+    showhidden: false # defaults to false
+    fullscreen: true # defaults true, applies to simple and ckeditor editors
+    include_assets: true # disable if you want to handle loading of the javascript and css assets yourself
+    compression: false # enable if you configured the uglifycss and uglifyjs2 assetic filters and want compression
+    connector:
+        debug: false # defaults to false
+        roots:       # at least one root must be defined
+            uploads:
+                driver: LocalFileSystem
+                path: uploads
+                upload_allow: ['image/png', 'image/svg+xml','image/jpg', 'image/jpeg','image/gif', 'image/tif']
+                upload_deny: ['all']
+                upload_max_size: 2M
+                
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   "%database_driver%"
+        host:     "%database_host%"
+        port:     "%database_port%"
+        dbname:   "%database_name%"
+        user:     "%database_user%"
+        password: "%database_password%"
+        charset:  UTF8
+        types:
+            json: Sonata\Doctrine\Types\JsonType
+    orm:
+        auto_generate_proxy_classes: %kernel.debug%
+        entity_managers:
+            default:
+                auto_mapping: true
+                mappings:
+                    gedmo_translatable:                  
+                        type: annotation
+                        prefix: Gedmo\Translatable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+                        alias: GedmoTranslatable # this one is optional and will default to the name set for the mapping
+                        is_bundle: false
+                    gedmo_tree:
+                        type: annotation
+                        prefix: Gedmo\Tree\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
+                        alias: GedmoTree # this one is optional and will default to the name set for the mapping
+                        is_bundle: false    	      
+                                          
+stof_doctrine_extensions:
+    default_locale: uk
+    orm:
+        default:
+            loggable: false
+            sluggable: true
+            timestampable: true
+            translatable: true
+            tree: true
+                            
+# Swiftmailer Configuration
+swiftmailer:
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    spool:     { type: memory }
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: Application\Sonata\UserBundle\Entity\User
+    group:
+        group_class: Application\Sonata\UserBundle\Entity\Group
+        
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+
+        #sonata.admin_doctrine_orm.block.audit:
+        #    contexts:   [admin]
+
+        sonata.block.service.text:
+        sonata.block.service.action:
+        sonata.block.service.rss:
+        sonata.admin.block.search_result:
+            contexts:   [admin]
+        # Some specific block from the SonataMediaBundle
+        #sonata.media.block.media:
+        #sonata.media.block.gallery:
+        #sonata.media.block.feature_media:
+
+sonata_admin:
+    title:      Admin Panel
+    title_logo: /bundles/sonataadmin/logo_title.png
+    templates:
+        # default global templates
+        layout:  SonataAdminBundle::standard_layout.html.twig
+        ajax:    SonataAdminBundle::ajax_layout.html.twig
+
+        # default actions templates, should extend a global templates
+        list:    SonataAdminBundle:CRUD:list.html.twig
+        edit:    SonataAdminBundle:CRUD:edit.html.twig
+    dashboard:
+        blocks:
+            # display a dashboard block
+            - { position: top, type: sonata.admin.block.admin_list }
+knp_menu:
+    twig:
+        template: knp_menu.html.twig
+    templating: false
+    default_renderer: twig
+    
+sonata_doctrine_orm_admin:
+    # default value is null, so doctrine uses the value defined in the configuration
+    entity_manager: ~
+
+    templates:
+        form:
+            - SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig
+        filter:
+            - SonataDoctrineORMAdminBundle:Form:filter_admin_fields.html.twig
+        types:
+            list:
+                array:      SonataAdminBundle:CRUD:list_array.html.twig
+                boolean:    SonataAdminBundle:CRUD:list_boolean.html.twig
+                date:       SonataAdminBundle:CRUD:list_date.html.twig
+                time:       SonataAdminBundle:CRUD:list_time.html.twig
+                datetime:   SonataAdminBundle:CRUD:list_datetime.html.twig
+                text:       SonataAdminBundle:CRUD:base_list_field.html.twig
+                trans:      SonataAdminBundle:CRUD:list_trans.html.twig
+                string:     SonataAdminBundle:CRUD:base_list_field.html.twig
+                smallint:   SonataAdminBundle:CRUD:base_list_field.html.twig
+                bigint:     SonataAdminBundle:CRUD:base_list_field.html.twig
+                integer:    SonataAdminBundle:CRUD:base_list_field.html.twig
+                decimal:    SonataAdminBundle:CRUD:base_list_field.html.twig
+                identifier: SonataAdminBundle:CRUD:base_list_field.html.twig
+
+            show:
+                array:      SonataAdminBundle:CRUD:show_array.html.twig
+                boolean:    SonataAdminBundle:CRUD:show_boolean.html.twig
+                date:       SonataAdminBundle:CRUD:show_date.html.twig
+                time:       SonataAdminBundle:CRUD:show_time.html.twig
+                datetime:   SonataAdminBundle:CRUD:show_datetime.html.twig
+                text:       SonataAdminBundle:CRUD:base_show_field.html.twig
+                trans:      SonataAdminBundle:CRUD:show_trans.html.twig
+                string:     SonataAdminBundle:CRUD:base_show_field.html.twig
+                smallint:   SonataAdminBundle:CRUD:base_show_field.html.twig
+                bigint:     SonataAdminBundle:CRUD:base_show_field.html.twig
+                integer:    SonataAdminBundle:CRUD:base_show_field.html.twig
+                decimal:    SonataAdminBundle:CRUD:base_show_field.html.twig
+
+oneup_uploader:
+    mappings:
+        product:
+            frontend: mooupload
+            namer: bambuk_cms_content.custom_namer
+        gallery:
+            frontend: mooupload
+            namer: bambuk_cms_content.custom_namer            
+                                                         
+stfalcon_tinymce:
+    include_jquery: true
+    tinymce_jquery: true
+    selector: ".tinymce"
+    base_url: "http://localhost/" 
+    language: %locale%
+#    external_plugins:
+# external_filemanager_path:"/uploads/"       
+    tinymce_buttons:
+        stfalcon: # Id of the first button
+            title: "Stfalcon"
+            image: "http://stfalcon.com/favicon.ico"
+    theme:
+        # Simple theme: same as default theme
+        simple: ~
+        # Advanced theme with almost all enabled plugins
+        advanced:
+             file_browser_callback : elFinderBrowser
+             plugins:
+                 - "advlist autolink lists link image charmap print preview hr anchor pagebreak"
+                 - "searchreplace wordcount visualblocks visualchars code fullscreen"
+                 - "insertdatetime media nonbreaking save table contextmenu directionality"
+                 - "emoticons template paste textcolor"
+             toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+             toolbar2: "print preview media | forecolor backcolor emoticons | stfalcon | example"
+             image_advtab: true
+             templates:
+                 - {title: 'Test template 1', content: 'Test 1'}
+                 - {title: 'Test template 2', content: 'Test 2'}
+        # BBCode tag compatible theme (see http://www.bbcode.org/reference.php)
+        bbcode:
+             plugins: ["bbcode, code, link, preview"]
+             menubar: false
+             toolbar1: "bold,italic,underline,undo,redo,link,unlink,removeformat,cleanup,code,preview"

@@ -1,0 +1,11 @@
+services:
+    sonata.ecommerce_demo.product.bowl.manager:
+        class: Sonata\ProductBundle\Entity\ProductManager
+        arguments:
+            - Application\Sonata\ProductBundle\Entity\Bowl
+            - @doctrine
+
+    sonata.ecommerce_demo.product.bowl.type:
+        class: Application\Sonata\ProductBundle\Provider\BowlProductProvider
+        arguments:
+            - @serializer

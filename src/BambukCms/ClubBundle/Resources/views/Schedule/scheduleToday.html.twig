@@ -1,0 +1,28 @@
+<div class="rozklad-table">
+   {% for salle in salles %}
+        <div class="table-row zal-{{ salle.id }}">
+            <div class="zal-number"><span><span>{{ salle.name }}</span></span></div>
+            <div class="line"></div>
+            <div class="hours-entry-contanier clearfix">
+               {% for schedule in salle.schedules %}
+                   {% if schedule.monday %} 
+						<div class="entry-box"> 
+		                    <div>
+		                        <span class="hour">{{ schedule.hour }}</span>
+		                        <span class="name">{{ schedule.monday.name }}</span>
+		                        <div class="short-description">
+		                            <img src="{{ schedule.monday.image }}"/>
+		                            <h5>{{ schedule.monday.name}}</h5>
+		                            <div>{{ schedule.monday.description }}</div>
+		                            <a href="">read more ...</a>
+		                        </div>
+		                    </div>
+		                </div>
+		            {% else %}
+		                 <div class="entry-box empty"></div>
+					{% endif %} 
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>

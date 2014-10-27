@@ -1,0 +1,39 @@
+parameters:
+#    bambuk_cms_club.example.class: BambukCms\ClubBundle\Example
+
+services:
+    form.type.translatable:
+      class: Ladela\PersonalTranslationsWidgetBundle\Form\Type\TranslatableFieldType
+      arguments: [ @service_container ]
+      tags:
+       - { name: form.type, alias: translatable_field }        
+    
+    city.BambukCms.admin.city:
+      class: BambukCms\ClubBundle\Admin\CityAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Клуби, label: Міста }
+      arguments: [null, BambukCms\ClubBundle\Entity\City, BambukCmsClubBundle:CityAdmin]
+    
+    club.BambukCms.admin.club:
+      class: BambukCms\ClubBundle\Admin\ClubAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Клуби, label: Клуби }
+      arguments: [null, BambukCms\ClubBundle\Entity\Club, BambukCmsClubBundle:ClubAdmin]
+      
+    salle.BambukCms.admin.salle:
+      class: BambukCms\ClubBundle\Admin\SalleAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Клуби, label: Зали, show_in_dashboard: false }
+      arguments: [null, BambukCms\ClubBundle\Entity\Salle, BambukCmsClubBundle:SalleAdmin]
+    
+    program.BambukCms.admin.program:
+      class: BambukCms\ClubBundle\Admin\ProgramAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Клуби, label: Програми }
+      arguments: [null, BambukCms\ClubBundle\Entity\Program, BambukCmsClubBundle:ProgramAdmin]
+
+    command.BambukCms.admin.command:
+      class: BambukCms\ClubBundle\Admin\CommandAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Клуби, label: Команди }
+      arguments: [null, BambukCms\ClubBundle\Entity\Command, BambukCmsClubBundle:CommandAdmin]                     

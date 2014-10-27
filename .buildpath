@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="app"/>
+	<buildpathentry kind="src" path="bin"/>
+	<buildpathentry kind="src" path="node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/url/node_modules/punycode/docs"/>
+	<buildpathentry kind="src" path="node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/url/node_modules/punycode/vendor/docdown"/>
+	<buildpathentry kind="src" path="node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/url/node_modules/punycode/vendor/requirejs/tests/browsertests/async"/>
+	<buildpathentry kind="src" path="node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/url/node_modules/punycode/vendor/requirejs/tests/browsertests/scriptloadinteractive"/>
+	<buildpathentry kind="src" path="node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/url/node_modules/punycode/vendor/requirejs/tests/browsertests/scriptloadinteractiveattach"/>
+	<buildpathentry kind="src" path="src/Acme/DemoBundle"/>
+	<buildpathentry kind="src" path="src/Application/Sonata/UserBundle"/>
+	<buildpathentry kind="src" path="src/BambukCms/ContentBundle"/>
+	<buildpathentry kind="src" path="src/BambukCms/PageBundle"/>
+	<buildpathentry kind="src" path="src/BambukCms/PostBundle"/>
+	<buildpathentry kind="src" path="src/BambukCms/ShowRoomBundle"/>
+	<buildpathentry kind="src" path="TodoList/config"/>
+	<buildpathentry kind="src" path="TodoList/dao"/>
+	<buildpathentry kind="src" path="TodoList/exception"/>
+	<buildpathentry kind="src" path="TodoList/flash"/>
+	<buildpathentry kind="src" path="TodoList/layout"/>
+	<buildpathentry kind="src" path="TodoList/mapping"/>
+	<buildpathentry kind="src" path="TodoList/model"/>
+	<buildpathentry kind="src" path="TodoList/page"/>
+	<buildpathentry kind="src" path="TodoList/util"/>
+	<buildpathentry kind="src" path="TodoList/validation"/>
+	<buildpathentry kind="src" path="TodoList/web"/>
+	<buildpathentry kind="src" path="vendor"/>
+	<buildpathentry kind="src" path="web"/>
+	<buildpathentry kind="lib" path="node_modules/bower/node_modules/unzip/testData/compressed-flags-set/archive.zip"/>
+	<buildpathentry kind="lib" path="node_modules/bower/node_modules/unzip/testData/compressed-OSX-Finder/archive.zip"/>
+	<buildpathentry kind="lib" path="node_modules/bower/node_modules/unzip/testData/compressed-standard/archive.zip"/>
+	<buildpathentry kind="lib" path="node_modules/bower/node_modules/unzip/testData/uncompressed/archive.zip"/>
+	<buildpathentry kind="lib" path="node_modules/bower/test/assets/package-zip-folder.zip"/>
+	<buildpathentry kind="lib" path="node_modules/bower/test/assets/package-zip.zip"/>
+	<buildpathentry kind="lib" path="node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/WebSocketMainInsecure.zip"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+</buildpath>

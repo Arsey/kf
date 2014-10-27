@@ -1,0 +1,37 @@
+bambuk_cms_content_homepage:
+    pattern:  /{_locale}
+    defaults: { _controller: BambukCmsContentBundle:Home:index, _locale: uk }
+    requirements:
+        _locale: ru|uk
+        
+bambuk_cms_post_post:
+    pattern:  /{_locale}/posts
+    defaults: { _controller: BambukCmsContentBundle:Post:index, _locale: uk }
+    requirements:
+        _locale: ru|uk        
+
+bambuk_cms_post_show:
+    pattern:  /{_locale}/post/{id}
+    defaults: { _controller: BambukCmsContentBundle:Post:showPost, _locale: uk }
+    requirements:
+       _method:  GET
+       _locale: ru|uk     
+
+bambuk_cms_post_tag:
+    pattern:  /{_locale}/post/tag/{id}
+    defaults: { _controller: BambukCmsContentBundle:Post:showPostTag, _locale: uk }
+    requirements:
+       _method:  GET
+       _locale: ru|uk  
+
+bambuk_cms_post_type:
+    pattern:  /{_locale}/posts/type/{type}
+    defaults: { _controller: BambukCmsContentBundle:Post:showPostType, _locale: uk }
+    requirements:
+        _locale: ru|uk    
+                        
+change_sort:
+    pattern:  /content/change_sort
+    defaults: { _controller: BambukCmsContentBundle:ChangeSort:changeSort}
+    requirements:
+       _method:  POST

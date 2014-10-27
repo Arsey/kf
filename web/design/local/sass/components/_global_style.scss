@@ -1,0 +1,130 @@
+
+
+$h1_size        :   em(14px,24px);		// h1
+$h2_size        :   em(14px,16px);		// h2
+$h3_size        :   em(14px,12px);		// h3
+$p_size         :   em(14px,14px);		// p
+
+$line			:	em(14px,24px);		// line-height
+
+$color_wite     :   #fff;				// білий
+$color_link     :   #4c4c4c;			// темн сірий
+$color_text 	:   #666666;			// світло сірий
+$color_span 	:   #8fb300;			// салатовий
+$color_span_2 	:   #cbe545;			// світло салатовий
+
+$family 		:   Verdana;			//
+ 
+
+html, body {
+	font-family: $family;
+	font-size: 14px;
+	line-height: $line;
+}
+
+body {
+	background: #8C6E38;
+	@media only screen and (min-width: 769px) {
+		background: none!important;
+	}
+}
+
+strong,b {
+	font-weight: bold;
+}
+
+.left 		{ float:left }
+.right 		{ float:right }
+.clear 		{ clear:both; display:block; }
+.clearfix 	{ @include pie-clearfix; }
+
+p {
+	line-height: $line;
+	font-family: $family;
+	color: $p_size;
+
+	-moz-hyphens: manual;
+	hyphens: manual;
+}
+a {
+	line-height: $line;
+	display: block;
+	font-family: $family;
+	color: $color_link;
+	text-decoration: none;
+}
+h3 {
+	color: $color_link;
+	font-weight: bold;
+	font-family: $family;
+}
+
+
+// блок обгортки
+
+.block_content {
+	padding: $line 0;
+	@media only screen and (max-width: 768px) {
+		padding-top: 1em;
+	}
+}
+
+
+// основний контент
+
+.content {
+	background: image-url('bg_mobi.jpg') no-repeat top center;
+	padding-bottom: em(14,10);
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: image-url('bg_mobi_fon.png');
+		z-index: -1;
+	}
+
+	@media only screen and (min-width: 601px) and (max-width: 768px) {
+		padding-top: em(14,30);
+	}
+	@media only screen and (min-width: 769px) {
+		background: image-url('bg.jpg') no-repeat bottom center;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[class*="column"] + [class*="column"]:last-child {
+	float: left;
+}
+
+@media only screen and (max-width: 768px) {
+	.columns {
+		margin: 5px 0;
+	}
+}
+
+
+
+// .columns {
+// 	outline: 1px solid #555;
+// }
+
+// .row {
+// 	outline: 1px solid #fff333;
+// }

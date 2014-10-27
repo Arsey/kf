@@ -1,0 +1,7 @@
+{% extends 'SonataAdminBundle:CRUD:base_edit.html.twig' %}
+{% block form %}
+{{ block('parentForm') }}
+{{ elfinder_tinymce_init4() }}    
+{% include "BambukCmsContentBundle:Admin:elfinder.html.twig" %}
+{% include "BambukCmsContentBundle:Admin:adaptiveEditor.html.twig" %} 
+{% endblock %}

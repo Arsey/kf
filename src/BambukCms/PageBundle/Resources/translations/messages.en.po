@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.6.5\n"
+
+msgid "Активна"
+msgstr "Активна"
+
+msgid "Батьківська сторінка"
+msgstr "Батьківська сторінка"
+
+msgid "Головна сторінка"
+msgstr "Home page"
+
+msgid "Дата створення"
+msgstr "Дата створення"
+
+msgid "Заголовок"
+msgstr "Заголовок"
+
+msgid "Ключові слова"
+msgstr "Ключові слова"
+
+msgid "Лінк"
+msgstr "Лінк"
+
+msgid "Мета теги"
+msgstr "Мета теги"
+
+msgid "Назва"
+msgstr "Назва"
+
+msgid "Назва в URL"
+msgstr "Назва в URL"
+
+msgid "Назва сторінки"
+msgstr "Назва сторінки"
+
+msgid "Опис"
+msgstr "Опис"
+
+msgid "Показувати в меню"
+msgstr "Показувати в меню"

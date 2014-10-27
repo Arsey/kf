@@ -1,0 +1,145 @@
+
+.contact {
+	padding: 0 0 0 0.57143em;
+	float: left;
+	width: 75%;
+
+	@media only screen and (max-width: 960px) {
+		width: 73%;
+	}
+	@media only screen and (max-width: 865px) {
+		width: 71%;
+	}
+	@media only screen and (max-width: 768px) {
+		float: none;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	ul {
+		float: left;
+		width: 33.3333%;
+
+		@media only screen and (max-width: 768px) {
+			text-align: center;
+		}
+
+		li {
+			background: image-url('number_2.png') no-repeat left center;
+			padding-left: em(14,26);
+			margin-top: em(14,10);
+			color: $color_wite;
+			&:first-child {
+				background: none;
+				color: $color_span_2;
+				padding-left: 0;
+				margin-top: 0;
+				margin-bottom: em(14,28);
+			}
+
+			@media only screen and (max-width: 768px) {
+				width: em(14,180);
+				margin: em(14,10) auto 0;
+			}
+
+			a {
+				color: $color_wite;
+				line-height: $line;
+			}
+		}
+	}
+}
+
+
+// соц мережі
+
+.social_networks {
+	padding-right: 0.57143em;
+	width: em(14,232);
+	float: right;
+
+	@media only screen and (max-width: 768px) {
+		margin: em(14,30) auto 0;
+		overflow: hidden;
+		float: none;
+		padding-right: 0;
+	}
+	li {
+		float: left;
+		height: em(14,51);
+		width: em(14,52);
+		margin-right: 2.3333%;
+		margin-bottom: em(14,8);
+		&:first-child + li + li + li {
+			float: right !important;
+			margin-right: 0 !important;
+		}
+
+		@media only screen and (max-width: 768px) {
+			margin-right: 3.4444%;
+		}
+
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			border: 1px solid #5B6D0D;
+			@include border-radius(em(14,5));
+		}
+	}
+	li [href="facebook"] {
+		background: image-url('social_networks/face.png') no-repeat top left;
+		&:hover {
+			background: image-url('social_networks/face_hover.png') no-repeat top left;
+		}
+	}
+	li [href="vk"] {
+		background: image-url('social_networks/vk.png') no-repeat top left;
+		&:hover {
+			background: image-url('social_networks/vk_hover.png') no-repeat top left;
+		}
+	}
+	li [href="twitter"] {
+		background: image-url('social_networks/tw.png') no-repeat top left;
+		&:hover {
+			background: image-url('social_networks/tw_hover.png') no-repeat top left;
+		}
+	}
+	li [href="youtube"] {
+		background: image-url('social_networks/you.png') no-repeat top left;
+		&:hover {
+			background: image-url('social_networks/you_hover.png') no-repeat top left;
+		}
+	}
+}
+	.social {
+		overflow: hidden;
+	}
+
+
+	// написати повідомлення
+
+	.message {
+		@include background( linear-gradient(top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.4) 100%));
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', endColorstr='#66ffffff',GradientType=0 );
+		border: 1px solid #5B6D0D;
+		@include border-radius(em(14,5));
+		text-align: center;
+		display: block;
+		height: em(14,50);
+		width: 100%;
+			line-height: em(14,47);
+			font-family: $family;
+			font-size: $p_size;
+			color: $color_text;
+			text-decoration: none;
+		&:hover {
+			@include background( linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.4) 100%));
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#66ffffff',GradientType=0 );
+		}
+
+		@media only screen and (max-width: 768px) {
+			width: 100%;
+		}
+
+	}

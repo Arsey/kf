@@ -1,0 +1,277 @@
+<?php
+
+namespace BambukCms\BannerBundle\Entity;
+
+
+use Doctrine\Common\Collections\ArrayCollection;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Translatable\Translatable;
+use Gedmo\Translatable\TranslatableListener;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="banner")
+ * @Gedmo\TranslationEntity(class="BambukCms\BannerBundle\Entity\BannerTranslation")
+ */
+class Banner
+{
+ /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(length=250)
+     */
+    private $title;
+    
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(length=250)
+     */
+    private $link;    
+
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(length=255)
+     */
+    private $image;
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(length=255)
+     */
+    
+    private $image_min;
+    
+    /**
+     * @ORM\Column(name="active", type="boolean", nullable=true)
+     */
+    protected $active;
+    
+    /**
+	 * @ORM\ManyToMany(targetEntity="BambukCms\ClubBundle\Entity\Section", inversedBy="banners")
+	 * @ORM\JoinTable(name="banner_section")
+	 */
+	private $sections;
+	
+    /**
+     * @ORM\Column(name="sort", type="integer")
+     */
+    
+    
+    private $sort = 0;
+    
+    /**
+     * @ORM\OneToMany(
+     *   targetEntity="BambukCms\BannerBundle\Entity\BannerTranslation",
+     *   mappedBy="object",
+     *   cascade={"persist", "remove"}
+     * )
+     */
+    private $translations;
+    
+    /**
+     * Initialization properties for new post entity
+     */
+    public function __construct()
+    {
+    	$this->translations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+   
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Post
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Post
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     * @return Post
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean 
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Set sort
+     *
+     * @param integer $sort
+     * @return Post
+     */
+    public function setSort($sort)
+    {
+        $this->sort = $sort;
+
+        return $this;
+    }
+
+    /**
+     * Get sort
+     *
+     * @return integer 
+     */
+    public function getSort()
+    {
+        return $this->sort;
+    }
+
+    public function getTranslations()
+    {
+        return $this->translations;
+    }
+
+    public function addTranslation(BannerTranslation $t)
+    {
+        if (!$this->translations->contains($t)) {
+            $this->translations[] = $t;
+            $t->setObject($this);
+        }
+    }
+
+
+   
+
+    /**
+     * Remove translations
+     *
+     * @param \BambukCms\BannerBundle\Entity\BannerTranslation $translations
+     */
+    public function removeTranslation(\BambukCms\BannerBundle\Entity\BannerTranslation $translations)
+    {
+        $this->translations->removeElement($translations);
+    }
+	
+
+    /**
+     * Set image_min
+     *
+     * @param string $imageMin
+     * @return Banner
+     */
+    public function setImageMin($imageMin)
+    {
+        $this->image_min = $imageMin;
+
+        return $this;
+    }
+
+    /**
+     * Get image_min
+     *
+     * @return string 
+     */
+    public function getImageMin()
+    {
+        return $this->image_min;
+    }
+
+    /**
+     * Add sections
+     *
+     * @param \BambukCms\ClubBundle\Entity\Section $sections
+     * @return Banner
+     */
+    public function addSection(\BambukCms\ClubBundle\Entity\Section $sections)
+    {
+        $this->sections[] = $sections;
+
+        return $this;
+    }
+
+    /**
+     * Remove sections
+     *
+     * @param \BambukCms\ClubBundle\Entity\Section $sections
+     */
+    public function removeSection(\BambukCms\ClubBundle\Entity\Section $sections)
+    {
+        $this->sections->removeElement($sections);
+    }
+
+    /**
+     * Get sections
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSections()
+    {
+        return $this->sections;
+    }
+}

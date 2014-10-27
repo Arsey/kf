@@ -1,0 +1,37 @@
+    <link rel="stylesheet" href="/bundles/bambukcmspage/css/nestable.css" type="text/css">
+	<script src="/bundles/bambukcmspage/js/jquery.nestable.js"></script>
+    <script>
+	
+	    $(document).ready(function()
+	{
+	$('.sonata-ba-list-field-batch').addClass('dd-nodrag');
+	$('.sonata-ba-list-field-actions').addClass('dd-nodrag');
+	/* nestable */
+	
+		$('#nestable').nestable({group:1}).on('change',  function(e) {
+		   			var elem=$('#nestable').data('output', $('#nestable-output'));
+		            var list   = elem.length ? elem : $(elem.target);
+		            output = list.data('output');
+		            if(JSON.stringify(list.nestable('serialize')) != ollList){
+		                changeSort(JSON.stringify(list.nestable('serialize'))); 
+		            	ollList=JSON.stringify(list.nestable('serialize'));
+		            }          
+		});
+			   	    var elem=$('#nestable').data('output', $('#nestable-output'));
+		            var list   = elem.length ? elem : $(elem.target);
+		            output = list.data('output');
+		            var ollList=JSON.stringify(list.nestable('serialize')); 
+	});
+	
+				function changeSort(sortJson){
+					$.ajax({
+											  type: "POST",
+											  url: "{{ url('change_sort_page')}}",
+											  data: { arrSortJson : sortJson },
+											  dataType: "json",
+											  success: function(data) {
+										}
+									 });
+				}
+	      
+	     </script>

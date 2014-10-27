@@ -1,0 +1,141 @@
+.about{
+    
+    /* common styles */ 
+    
+    background: $black; 
+    .page-header{
+        position: relative;
+    }
+    .page-body{
+        background: $white;
+    }
+    p, .fact-list{
+        line-height: em-calc(24px);
+    }
+    h2.title{
+        font-size: 24px;
+        line-height: 24px;
+        margin: 0 0 2.33334em 0;
+        text-align: center;
+    }
+    .content-section{
+        padding-top: 5em;
+    }
+    .grid-holder{
+        z-index: auto;
+    }
+    
+    
+    
+    /* facts large */ 
+    
+    .fact-large {
+        border: 1px solid $darkblue;
+        border-width: 1px 0 0 1px;
+        
+        .content{
+            text-align: center;
+            padding: 48px;
+        }
+        &:first-child,&:nth-child(4){
+            border-left: none;
+        }
+        &:nth-child(4),&:nth-child(5),&:nth-child(6){
+            border-bottom-width: 1px;
+        }
+        .icon {
+            width:100%;
+            height:120px;
+            background-image:image-url('about/facts-large.svg');
+            background-repeat:no-repeat;
+            overflow: hidden;
+            text-indent: -9000px;
+        }
+        @media #{$medium}{
+            padding-top: 12.5%;
+            .content{
+                @include fill-block;
+                padding: 80px;
+            }
+        }
+    }
+    .icon-amount{background-position:center 0 ;}
+    .icon-factory{background-position:center -119px ;}
+    .icon-officces{background-position:center -238px ;}
+    .icon-personel{background-position:center -357px ;}
+    .icon-projects{background-position:center -476px ;}
+    .icon-sorts{background-position:center -595px ;}
+    
+    
+    
+    /* facts small */ 
+    
+    .fact-list{
+        list-style: none;
+        padding: 0 24px;
+        @media #{$medium}{
+            padding: 0 80px;
+        }
+        margin: 0;
+
+    }
+    .fact{
+        position: relative;
+        padding-left: 64px;
+        margin-bottom: 40px;
+        &:before{
+            content: '';
+            position: absolute;
+            display: block;
+            left: 0;
+            background-image: image-url('about/icons.svg');
+            background-repeat: no-repeat;
+            width: 45px;
+            height: 45px;
+            top: 0;
+            left: 0;
+        }
+    }
+    .icon-additional-processing:before{background-position:0 0;}
+    .icon-armed:before{background-position:0 -46px;}
+    .icon-cut:before{background-position:0 -92px;}
+    .icon-emaluvannia:before{background-position:0 -137px;}
+    .icon-lab:before{background-position:0 -182px;}
+    .icon-laminat:before{background-position:0 -226px;}
+    .icon-obrobka:before{background-position:0 -271px;}
+    .icon-piskostruika:before{background-position:0 -316px;}
+    .icon-store:before{background-position:0 -361px;}
+    .icon-sulfid-testing:before{background-position:0 -406px;}
+    
+    
+    
+    
+    /* Partners*/ 
+    
+    .partners {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+            width: 50%;
+            padding-top: 50%;
+            @media #{$large} {
+                width: 100/6*1%;
+                padding-top: 100/6*1%;
+            }
+            float: left;
+            text-align: center;
+            border: 1px solid $darkblue;
+            border-width: 1px 0 0 1px;
+            position: relative;
+            &:first-child{
+                border-left: none;
+            }
+            img{
+                position: absolute;
+                top: calc(50% - 63px);
+                left: calc(50% - 84px);
+            }
+        }
+    } 
+} 

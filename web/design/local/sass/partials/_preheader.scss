@@ -1,0 +1,155 @@
+
+.preheader_block {
+	position: relative;
+	background: rgba(255,255,255,0.7);
+	margin-bottom: 10px;
+	
+	@media only screen and (min-width: 720px) {
+		background: transparent;
+	}
+}
+
+	.preheader {
+		margin-bottom: em(14,12);
+		padding-top: em(14,12);
+		height: 50px;
+		position: relative;
+		p, a {
+			color: $color_text;
+			font-size: em(14,15);
+			font-family: $family;
+			text-decoration: none;
+		}
+
+		@media only screen and (max-width: 768px) {
+			margin-top: em(14,-10) !important;
+			margin: 0 auto;
+		}
+		@media only screen and (max-width: 720px) {
+			max-width: em(14,322);
+		}
+		@media only screen and (max-width: 720px) {
+			margin-bottom: em(14,5);
+		}
+	}
+
+		.preheader_left {
+			height: 100%;
+			float: left;
+
+			@media only screen and (max-width: 720px) {
+				width: 65%;
+				font-size: 12px;
+			}
+			@media only screen and (min-width: 720px) and (max-width: 768px) {
+				width: 42%;
+			}
+			p, a {
+				margin-top: 2px;
+				@media only screen and (min-width: 768px) {
+					margin-top: -7px;
+				}
+			}
+
+			// ico
+			span {
+				display: none;
+				position: relative;
+				top: 10px;
+				width: 32px;
+				height: 32px;
+				margin-right: 7px;
+
+				@media only screen and (min-width: 768px) {
+					display: inline-block;
+				}
+			}
+		}
+		.preheader_right {
+			height: 100%;
+			float: right;
+
+			@media only screen and (max-width: 720px) {
+				width: 35%;
+				font-size: 12px;
+			}
+			@media only screen and (min-width: 721px) and (max-width: 768px) {
+				width: 58%;
+			}
+		}
+
+			// вхід на сайт
+			.entrance {
+				float: left;
+				width: 30%;
+				span {
+					background: image-url('entrance.png') no-repeat center center;
+				}
+				a {
+					@media only screen and (max-width: 720px) {
+						color: #00883F;
+					}
+				}
+
+				// @media only screen and (max-width: 601px) {
+				// 	background: none;
+				// 	width: 30%;
+				// 	padding-left: 0;
+				// 	float: left;
+				// 	height: auto;
+				// }
+			}
+
+			// номер телефону
+			.numder {
+				width: 70%;
+				float: right;
+				text-align: right;
+				span {
+					background: image-url('number.png') no-repeat center center;
+				}
+
+				// @media only screen and (max-width: 601px) {
+				// 	background: none;
+				// 	width: 70%;
+				// 	height: auto;
+				// 	padding-left: 0;
+				// 	text-align: left;
+				// 	float: right;
+				// }
+			}
+
+	// мовна понель
+	.language {
+		margin-left: $line;
+		overflow: hidden;
+		float: right;
+
+		@media only screen and (max-width: 720px) {
+			margin: 0 auto;
+			float: none;
+			width: 100%;
+		}
+
+		a {
+			font-size: $p_size;
+			float: right;
+			margin-left: em(14,8);
+			margin-top: 2px;
+
+			&:hover, &:active, &.active {
+				text-decoration: underline;
+				color: $color_span;
+			}
+
+			@media only screen and (max-width: 720px) {
+				font-size: 12px;
+				&:hover, &:active, &.active {
+					color: #00883F;
+				}
+			}
+			@media only screen and (min-width: 721px) {
+				margin-top: 7px;
+			}
+		}
+	}

@@ -1,0 +1,66 @@
+bambuk_cms_banner:
+    resource: "@BambukCmsBannerBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bambuk_cms_slider:
+    resource: "@BambukCmsSliderBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bambuk_cms_club:
+    resource: "@BambukCmsClubBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bambuk_cms_content:
+    resource: "@BambukCmsContentBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bambuk_cms_post:
+    resource: "@BambukCmsPostBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bambuk_cms_page:
+    resource: "@BambukCmsPageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+ 
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+ 
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+ 
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+ 
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /change-password
+
+elfinder:
+     resource: "@FMElfinderBundle/Resources/config/routing.yml"
+      
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+ 
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+ 
+soanata_user:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+ 
+sonata_user_impersonating:
+    pattern: /
+    defaults: { _controller: SonataPageBundle:Page:catchAll }
+
+oneup_uploader:
+    resource: .
+    type: uploader    

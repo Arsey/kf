@@ -1,0 +1,206 @@
+
+// обрати адрес клубу
+
+.adress_row {
+	padding: 0;
+	overflow: visible;
+
+	// @media screen and ( min-width: 601px ) and ( max-width: 768px )  {
+	// 	width: 70%;
+	// 	float: right;
+	// }
+
+	@media only screen and (max-width: 768px) and (min-width: 601px) {
+		width: 40.5555%;
+	}
+	@media screen and ( max-width: 600px ) {
+		position: absolute;
+		margin-left: em(14,-8);
+	}
+
+}
+	.adress {
+		background: rgba(255, 255, 255, 0.6);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', endColorstr='#99ffffff',GradientType=0 );
+		max-width: em(14,305);
+		margin: 0 auto;
+		margin-top: em(14,8);
+		position: absolute;
+		width: 100%;
+
+		@media screen and ( max-width: 600px ) {
+			position: static;
+		}
+
+		.ouup {
+			display: block;
+		}
+		li {
+			height: em(14,32);
+			border-bottom: 1px solid #AFAFAF;
+			position: relative;
+			display: none;
+			z-index: 1;
+			&:hover {
+				background: rgba(255, 255, 255, 0.7);
+			}
+			&:nth-child(1) {
+				display: block;
+				background: rgba(255, 255, 255, 0.7);
+				&:hover, &:active {
+					background: rgba(255, 255, 255, 1);
+				}
+				a {
+					color: $color_span;
+				}
+			}
+		}
+		a {
+			text-decoration: none;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+				color: $color_text;
+				font-weight: bold;
+				padding-left: em(14,13);
+				line-height: em(14,31);
+		}
+	}
+
+			// кнопка вибору клубу
+
+			.knopa {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				width: em(14,34);
+				height: 100%;
+				cursor: pointer;
+				border-left: 1px solid #AFAFAF;
+				z-index: 1;
+				&:after {
+					content: "";
+					position: absolute;
+					top: em(14,13);
+					border: em(14,7) solid;
+					border-color: $color_span transparent transparent;
+					left: em(14,9);
+				}
+			}
+
+
+	// години сеансів
+
+	.club_adress {
+		text-align: center;
+	}
+	.session_row {
+		float: right !important;
+
+		@media screen and ( max-width: 600px ) {
+			margin-top: em(14,65);
+		}
+
+	}
+		.hour_sessions {
+			width: 100%;
+			overflow: hidden;
+			height: em(14,53);
+			margin: 0 auto;
+
+			@media only screen and (max-width: 768px) and (min-width: 601px) {
+				margin-top: em(14,50);
+			}
+			@media screen and ( max-width: 600px ) {
+				width: 94%;
+			}
+			@media screen and ( max-width: 533px ) {
+				width: 97%
+			}
+			@media screen and ( max-width: 480px ) {
+				width: 96%
+			}
+			// @media screen and ( max-width: 320px ) {
+			// 	width: 96%
+			// }
+
+			// @media screen and ( max-width: 480px ) {
+			// 	padding: 0 2.86em;
+			// 	height: 50px;
+			// 	max-width: 100%;
+			// 	margin: 0 auto;
+			// }
+
+			li {
+				float: left;
+				margin-left: em(14,5);
+				position: relative;
+				a {
+					display: block;
+					width: em(14,50);
+					height: em(14,50);
+						line-height: em(14,50);
+						text-align: center;
+						text-decoration: none;
+						font-weight: bold;
+						font-size: $p_size;
+						color: $color_wite;
+					@include border-radius(em(14,50));
+					&:hover, &:active, &.activate {
+						// font-size: 18px;
+						// line-height: em(18,50);
+						// @include border-radius(em(18,50));
+						background: rgba(255, 255, 255, 0.4);
+						filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#66ffffff',GradientType=0 );
+						&:after {
+							display: block;
+						}
+					}
+					&:after, {
+						content: "00";
+						position: absolute;
+						display: none;
+						font-size: em(14,11);
+						top: em(14,-7);
+						right: em(14,-4);
+					}
+				}
+			}
+		}
+
+		.type_of_session {
+			overflow: hidden;
+			height: em(14,19);
+
+			@media screen and ( max-width: 600px ) {
+				text-align: center;
+				margin: 0;
+				height: em(14,33);
+				margin-top: em(14,10);
+			}
+
+			li {
+				float: left;
+				margin-left: 6.5%;
+
+				@media only screen and (max-width: 768px) and (min-width: 601px) {
+					margin-left: 2.5%;
+				}
+				@media screen and ( max-width: 600px ) {
+					float: none;
+					margin-bottom: em(14,14);
+					margin-left: 0;
+				}
+
+				a {
+					text-decoration: none;
+					font-weight: bold;
+					font-size: $p_size;
+					color: $color_wite;
+				}
+			}
+			span {
+				color: $color_span_2;
+			}
+
+		}

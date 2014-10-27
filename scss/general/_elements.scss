@@ -1,0 +1,242 @@
+%fill-block{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+}
+@mixin fill-block{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+}
+
+@mixin in-squre() {
+    @include fill-block;
+    span{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 50%;
+        color: $black;
+        margin-top: -12px;
+        line-height: 24px;
+    }
+}
+
+
+// 1/8 square style
+.square{
+    padding-top: 100/8 * 1%;
+}
+
+// global title style
+.title {
+    font-size: 2rem;
+    font-family: $heading-font-family;
+    font-weight: 100;
+}
+
+// page's header
+.page-header{
+
+    width: 100%;
+    z-index: 1;
+    margin: 0;
+    position: relative;
+    &.white {
+        background: none;
+    }
+    &>div{
+        padding-top: 50%;
+    }
+    @media #{$medium} {
+        width: 50%;
+    }
+    @media #{$large} {
+        width: 25%;    
+    }
+}
+// title square in header
+.page-title{
+    padding-top: 100/8 * 1%;
+    .title { 
+        @include in-squre;
+        margin: 0;
+        font-size: rem-calc(24);
+        .white & span{
+            color: $white;
+        }
+    }
+    
+}
+
+
+
+
+// icon for menu
+.menu-icon {
+    @extend %fill-block;
+    cursor: pointer; 
+} 
+
+.menu-icon-lines{
+    display: block;
+    width: 48px;
+    height: 4px;
+    background: $black;
+    top:50%;
+    left: 50%;
+    position: absolute;
+    margin: -16px 0 0 -24px;
+    .white &{
+        background: $white;
+    }
+    &:after, &:before{
+        display: block;
+        position: absolute;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+    }
+    &:before{
+        top:14px;
+    }
+    &:after{
+        top: 28px;  
+    }
+}
+.menu-icon-back{
+    display: block;
+    background: image-url('arrow-back.svg') no-repeat center;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin: -25px 0 0 -25px;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+// social icons
+.social{
+    .icon{
+        width: 2.5em;
+        height: 2.5em;
+        margin: .5em;
+        display: block;
+        float: left;
+        position: relative;
+        border-radius: 3em;
+        background: image-url("social.svg") no-repeat;
+        background-size: 2.5625em;
+        transition: .3s;
+        cursor: pointer;
+    }
+    .facebook{
+        background-position: 0px 0px;
+        transition-delay: 0;
+    }
+    .twitter{
+        background-position: 0px -5.125em;
+        transition-delay: .1s;
+    }
+    .google{
+        background-position: 0px -2.5625em;
+        transition-delay: .2s;
+    }
+}
+
+@media #{$medium} {
+    .grid-holder{
+        position: absolute;
+        min-height: 100vh;
+        height: 100%;
+        pointer-events: none;
+        width: 100vw;
+        top:0;
+        left:0;
+        overflow: hidden;
+        .grid {
+            background-image: image-url('grid-dark.svg');
+        }
+        &.white .grid{
+            background-image: image-url('grid-ligth.svg');
+        }
+    }
+    .grid {
+        position: fixed;
+        content: '';
+        height: 100%;
+        width: 100vw;
+        top:0;
+        left:0;
+        background-position:0px 0px, 0px 0px;
+        transform: translateZ(0);
+        background-size:25% ;
+    }
+}
+@media #{$large} {
+    .grid {
+        background-size:12.5% ;
+    }
+}
+
+
+
+.page{
+    display: none;
+    width: 100vw;
+    
+    position: relative;
+    
+    z-index: 1;
+    transform: translate3d(0,0,0);
+    @media #{$medium} {
+        min-height: 100vh; 
+        padding-bottom: 12.5%;
+    }
+}
+
+@media #{$large}{
+    .columns {
+        &.third {
+            width: 100/3*1%;
+            &.square{
+                padding-top: 100/3*1%;
+            }
+        }
+        &.third-2{
+            width: 100/3*2%;
+        }
+    }
+}
+
+
+// tile background
+
+.darkTile {
+    background-color: $darkbluetrans;
+    background-image: image-url('grid-dark.svg');
+    background-size: 100%;
+}
+.ligthTile {
+    background: linear-gradient(45deg, rgba(255,255,255,.3) 0%,rgba(255,255,255,0) 100%), image-url('grid-dark.svg');
+    background-size:auto,auto, 100%;
+    box-shadow: 0 0 100px 0 rgba(255,255,255,.3) inset;
+}
+.ligthTileUberTop {
+    background: linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%), image-url('grid-dark.svg');
+    background-size:auto,auto, 100%;
+    box-shadow: 0 0 100px 0 rgba(255,255,255,.3) inset;
+}
+.ligthTileUberBottom {
+    background: linear-gradient(-45deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%), image-url('grid-dark.svg');
+    background-size:auto,auto, 100%;
+    box-shadow: 0 0 100px 0 rgba(255,255,255,.3) inset;
+}

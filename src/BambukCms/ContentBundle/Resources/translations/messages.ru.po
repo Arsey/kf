@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.6.5\n"
+
+msgid "Головна"
+msgstr "Главная"
+
+msgid "Контакти"
+msgstr "Контакты"
+
+msgid "Про нас"
+msgstr "О нас"
+
+msgid "Публікації"
+msgstr "Публикации"

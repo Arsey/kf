@@ -1,0 +1,136 @@
+$pushZ:300;
+$tileSpeed:15000ms;
+$steps:20;
+$breakpoint:6;
+$breakpoint2:14;
+
+$delay: strip-units($tileSpeed)/18;
+$tilesPerRow:8;
+$tiles: 40;
+
+
+
+
+.menu-link{
+    transition: .5s;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(255,255,255,.4);
+    vertical-align: middle;
+    left: 0;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color .3s;
+    transform: translateZ(0);
+    background-image: image-url('grid-dark.svg');
+    background-size: 100%;
+    overflow: hidden;//sometimes span go out of box and make space (on mobile)
+    &:hover {
+        background-color: rgba(255,255,255,.8)
+    }
+    span{
+        display: block;
+        line-height: 240px;
+        width: 100%;
+        height: 240px;
+        top: calc( 50% - 120px );
+        color:#333;
+        position: relative;
+        vertical-align: middle;
+        text-transform: uppercase;
+        font-size: rem-calc(18);
+    }
+}
+
+
+.homepage{
+    background: #78c0ff;
+    @media #{$medium} {
+        background: none;    
+    }
+    @media #{$large} {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        
+        width: 100vw;
+    }
+    .logo{
+        @extend %fill-block;
+        background: image-url('skloresurslogo-ukr.svg') center no-repeat,image-url('grid-dark.svg');
+        text-indent: -999px;
+        overflow: hidden;
+        z-index: 2;
+        background-size:auto, 100%;
+    }
+    .lang{
+        position: absolute;
+        top: 50%;
+        margin-top: -58px;
+        width: 100%;
+        left: 0;
+        a{
+            display: block;
+            text-transform: uppercase;
+            color:$white;
+            margin: 0 auto;
+            opacity: .5;
+            line-height: 175%;
+            margin: .5em 0;
+            text-align: center;
+            text-decoration: none;
+            transition: opacity .3s;
+            &:hover, &.active{
+                opacity: 1;
+            }
+        }
+    }
+    .grid-holder {
+        transition:opacity 0;
+        transform: translateZ(0);
+
+    }
+    .tiles{
+        transition: opacity .5s;
+        .columns{
+            display: block;
+            //border: 1px solid $darkblue;
+            //border-width: 0 1px 1px 0;
+            padding-top: 100 / 2 * 1%;
+        }
+        @media #{$medium} {
+            position: absolute;
+            .columns{
+                padding-top: 100/4 * 1%;
+            }
+        } 
+    }
+    .tiles{
+        width: 100%;
+        @media #{$large} {
+            .columns{
+                padding-top: 100/8 * 1%;
+            }
+        } 
+    }
+}
+
+
+.sky{
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 0;
+    video {
+        position: absolute;
+        max-width: none;
+        max-height: none;
+        min-height: 100vh;
+        transition: opacity .5s  ;
+    }
+}

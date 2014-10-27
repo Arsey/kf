@@ -1,0 +1,177 @@
+{% extends '::base.html.twig' %}
+{% block header %}
+	{{ render(controller('BambukCmsContentBundle:Home:header')) }}
+{% endblock %}
+{% block content %}
+<section id="rozklad" class="rozklad-container">
+    <header>
+        <div class="row">
+            <div class="columns large-12">
+                <div class="rozklad-text">
+                    <h4>Розклад занять</h4>
+                    <span>7 червня</span>
+                </div>
+                <a href="#" class="link-with-icon-56 green">
+                    <span class="menu-and-icon">
+                        <span class="icon-calendar-icon"></span>
+                    </span>
+                    <span>Весь розклад</span>
+                </a>
+                <form>
+                    <select name="address" class="custom-select">
+                        <option>Клуб на вул.Наукова</option>
+                        <option>Клуб на вул.Масарика</option>
+                        <option>Клуб на вул. С.Бандери</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+    </header>
+    {{ render(controller('BambukCmsClubBundle:Schedule:getScheduleToday')) }}
+    
+    <div class="row">
+        <div class="columns large-12 bottom-link">
+            <a href="#" class="link-with-icon-56 green center-fix">
+                <span class="menu-and-icon">
+                    <span class="icon-blog-icon"></span>
+                </span>
+                <span>всі новини</span>
+            </a>
+        </div>
+    </div>
+</section><section id="blog-banner" class="blog-banner-container clearfix">
+    <div class="width50">
+        <div class="banners">
+            <div class="banner1 clearfix">
+                <div class="more-txt">
+                    <p>10% знижки<span>на місяць тренувань</span></p>
+                </div>
+                <div class="text-box">
+                    <img src="/frontend/img/page/home/banner1-icon.png" width="75" height="77"/>
+                    <h5>Акція “Активне літо”</h5>
+                    <span class="date-end">до 21 липня</span>
+                    <a href="#">
+                        <span class="text-btn">Детальніше</span>
+                    </a>
+                </div>
+            </div>
+            <div class="banner2 clearfix">
+                <div class="text-box">
+                    <div class="banner-icon">
+                        <img src="/frontend/img/page/home/banner2-icon.png" width="93" height="103"/>
+                    </div>
+                    <h5>Акція "Фітнес для мозку"<br/>
+                        Безкоштовне тренування!</h5>
+                    <span class="date-end">до 20 липня</span>
+                    <a href="#">
+                        <span class="text-btn">Детальніше</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="width50">
+        <div class="blog">
+            <div class="row">
+                <div class="columns large-7">
+                    <div class="blog-entry green">
+                        <div class="date">
+                            <span>27</span>
+                            липня
+                        </div>
+                        <a href="#"><h4>Оutdoor yoga workout!!! 10 серпня у парку НУ "Львівська політехніка" відбудеться відкрите заняття з хатха-йоги!</h4></a>
+                        <p>Запрошуємо усіх бажаючих на заняття із нами. Буде можливість наповнитися, навчитися новому, а основне – вийти на нові рівні сприйняття власного тіла та життя</p>
+                    </div>
+                </div>
+                <div class="columns large-5">
+                    <div class="blog-entry yellow">
+                        <div class="date">
+                            <span>27</span>
+                            липня
+                        </div>
+                        <a href="#"><h4>Kiwi weekend! 16-17 серпня!</h4></a>
+                        <p>Запрошуємо усіх, хто бажає відпочити на березі озера, насолодитись чарівними краєвидами, позасмагати, провести час...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns large-5">
+                    <div class="blog-entry brown">
+                        <div class="date">
+                            <span>27</span>
+                            липня
+                        </div>
+                        <a href="#"><h4>Супер акція сезону – Безпрограшна лотерея!</h4></a>
+                        <p>Тільки з 22 липня до 2 серпня. Поспішайте придбати абонементи та гарантовано отримуйте знижку від 10 до 30 %, а також миттєвий...</p>
+                    </div>
+                </div>
+                <div class="columns large-7">
+                    <div class="blog-entry green2">
+                        <div class="date">
+                            <span>16</span>
+                            липня
+                        </div>
+                        <a href="#"><h4>Оutdoor yoga workout + лекція з аюрведи! 27 ЛИПНЯ о 09:00 в Стрийському парку</h4></a>
+                        <p>Запрошуємо усіх бажаючих на заняття із нами. Буде можливість наповнитися, навчитися новому, а основне – вийти на нові рівні сприйняття власного тіла та життя</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+<section id="usefull-tips" class="usefull-tips-container clearfix">
+    <div class="container">
+        <img src="/frontend/img/page/home/useful-tip1.png"/>
+        <h6>
+            Коли краще тренуватись
+            <span>вранці чи ввечері?</span>
+        </h6>
+        <p>Тренуйтесь, враховуючи свій біоритм. Комусь легше позайматись вранці,
+            до когось працездатність приходить лише після обіду. Головне правило — тренуватись, коли можеш, коли комфортоно, коли від тренування отримуєш задоволення і максимальний ефект.</p>
+    </div>
+</section>
+        <section id="home-slider" class="home-slider-container clearfix">
+            <ul class="example-orbit" data-orbit>
+            {% for slider in sliders %}
+           		 <li>
+                    <img src="{{ slider.image }}" alt="{{ slider.title }}"/>
+					{{ slider.description }}
+					{% autoescape %}
+    					{{ slider.description|raw }}
+					{% endautoescape %}
+                 </li>
+	        {% endfor %}  
+            </ul>
+        </section>
+
+<section id="usefull-tips" class="usefull-tips-container shop clearfix">
+    <div class="container">
+        <img src="/frontend/img/page/home/useful-tip2.png"/>
+        <h6>
+            Гантель професійна
+            <span>InterAtletika 35 кг (ST 550.35)</span>
+        </h6>
+        <p>450 грн</p>
+    </div>
+</section>
+<section class="more-proposes">
+    <div class="row">
+        <div class="columns large-12">
+            <div class="fake-banners">
+	        {% set i = 0 %}
+	        {% for banner in section.banners %}
+	        	{% if i%2 %}
+	 				 {% set img_class = 'fright' %}   
+	 			{% else %}
+	 				{% set img_class = 'fleft' %} 	    	
+	            {% endif %}
+	       		 <a href="{{ banner.link }}">
+	                <img  class={{ img_class }} src="{{ banner.image }}" alt="{{ banner.title }}"/>
+	             </a>
+	        	{% set i=i+1 %}            
+		    {% endfor %} 
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

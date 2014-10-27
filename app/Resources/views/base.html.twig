@@ -1,0 +1,36 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,300italic,700italic,700,100italic,500,500italic,900,900italic,100&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="/frontend/css/app.css">
+        <!--[if lt IE 9]>
+              <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    </head>
+    
+    <body class="{% if 'PostController' in app.request.attributes.get("_controller") == 1 %}blog-list-page {% else %} home {% endif %}">
+        {% block body %}
+	        {% block header %}
+	        	{{ render(controller('BambukCmsContentBundle:Home:header')) }}
+	        {% endblock %}
+	        {% block content %}
+	        {% endblock %}
+	        {% block footer %}
+	           {{ render(controller('BambukCmsContentBundle:Home:footer')) }}
+	        {% endblock %}          
+        {% endblock %}
+        
+        {% block javascripts %}
+        {% endblock %}
+    </body>
+</html>

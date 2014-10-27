@@ -1,0 +1,12 @@
+bambuk_cms_page_show:
+    pattern:  /{_locale}/page/{slug}
+    defaults: { _controller: BambukCmsPageBundle:Page:showPage, _locale: uk }
+    requirements:
+       _method:  GET
+       _locale: en|ru|uk
+        
+change_sort_page:
+    pattern:  /page/change_sort
+    defaults: { _controller: BambukCmsPageBundle:ChangeSort:changeSort}
+    requirements:
+       _method:  POST       

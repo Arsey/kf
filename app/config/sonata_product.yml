@@ -1,0 +1,5 @@
+sonata_product:
+    products:
+        sonata.ecommerce_demo.product.bowl:
+            provider: sonata.ecommerce_demo.product.bowl.type
+            manager: sonata.ecommerce_demo.product.bowl.manager 

@@ -1,0 +1,57 @@
+{% extends '::base.html.twig' %}
+{% block header %}
+	{{ render(controller('BambukCmsContentBundle:Post:header')) }}
+{% endblock %}
+{% block content %}
+<section id="singleBlog" class="singleBlog-contanier">
+    <div class="row">
+        <div class="columns large-12">
+            <div class="breadcrumbs">
+                <a href="#">Головна <span class="icon-top-arrow"></span></a>
+                <a href="#">Про Ківі <span class="icon-top-arrow"></span></a>
+                <a href="#">Новини <span class="icon-top-arrow"></span></a>
+                <span>{{ post.title }}</span>
+            </div>
+            <div class="meta-tags clearfix">
+                <span class="fleft">{{ post.created|date("d.m.Y") }}</span>
+				 {% for club in post.club %}
+               		 <span class="fright"> <a href="#"> #{{ club.name }} </a> </span>
+                {% endfor %}
+            </div>
+            <div class="single-blog-entry-container"> 
+                <h1>{{ post.title }}</h1> 
+                <div class="entry-body">
+					{% autoescape %}
+				    	{{ post.content|raw }}
+					{% endautoescape %}
+                </div>
+                                
+                <div class="share-block">
+                    <span class="fleft">Розказати друзям</span> 
+                    <div class="social"> 
+                        <a href="#"><span class="icon-facebook-icon"></span></a>
+                        <a href="#"><span class="icon-vkontakte-icon"></span></a>
+                        <a href="#"><span class="icon-twitter-icon"></span></a>
+                    </div>
+                </div>
+            </div>
+            <img src="/frontend/img/page/disquas.jpg"/>
+			<div class="fake-banners">
+	        {% set i = 0 %}
+	        {% for banner in section.banners %}
+	        	{% if i%2 %}
+	 				 {% set img_class = 'fright' %}   
+	 			{% else %}
+	 				{% set img_class = 'fleft' %} 	    	
+	            {% endif %}
+	       		 <a href="{{ banner.link }}">
+	                <img class={{ img_class }} src="{{ banner.image }}" alt="{{ banner.title }}"/>
+	             </a>
+	        	{% set i=i+1 %}            
+		    {% endfor %} 
+            </div>
+        </div>
+    </div>
+</section> 
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+    {% include "FMElfinderBundle:Elfinder:helper/assets_css.html.twig" %}
+    {% include "FMElfinderBundle:Elfinder:helper/assets_js_simple.html.twig" %}
+<style>
+ .img_elfinder{
+ 	display:none;
+ }
+ .elfinder-button-icon {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	position: relative;
+	padding: 11px;
+}
+.elfinder-cwd-view-icons .elfinder-cwd-file .elfinder-cwd-filename.ui-state-hover, .elfinder-cwd table td.ui-state-hover, .elfinder-button-menu .ui-state-hover {
+ 	color:#000;
+}
+</style>    
+<script>
+$().ready(function() {
+$(".img_elfinder").each(function() {
+	if($(this).val()!=''){
+	 	$('<img height="120px" src="'+$(this).val()+'"  class="elfinder"><a class="efClearImg" href="#">Видалити</a>').insertAfter(this);
+	}else{
+	 	$('<img src="/images/elfinder_icon.png" class="elfinder">').insertAfter(this);
+	}
+});
+$('.elfinder').click(function(){
+	  var parent=this;
+      var $f = $('<div/>').dialogelfinder({
+            url : 'http://localhost/efconnect',
+            lang : 'ru',
+			width : 840,
+			destroyOnClose :  false,
+			getFileCallback : function(files, fm) {
+				$(parent).prev().val('/'+files.path);
+				$(parent).attr('src','/'+files.path);
+				$(parent).attr('height',"120px");
+				if(!$(parent).next().hasClass( "efClearImg" )){
+					$('<a class="efClearImg" href="#">Видалити</a>').insertAfter(parent);
+				}
+			},
+			commandsOptions : {
+				getfile : {
+					oncomplete : 'close',
+					folders : false
+				}
+			}
+					}).dialogelfinder('instance');
+        });
+        
+     $('body').delegate( ".efClearImg", "click", function() {
+	     	event.preventDefault();
+	        $(this).prev().attr('src','/images/elfinder_icon.png');
+	        $(this).prev().removeAttr("height");
+	        $(this).prev().prev().val('');
+     });
+});       
+</script>

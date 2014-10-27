@@ -1,0 +1,60 @@
+{% extends '::base.html.twig' %}
+{% block header %}
+	{{ render(controller('BambukCmsContentBundle:Post:header')) }}
+{% endblock %}
+{% block content %}
+   <div class="row">
+            <div class="columns large-12">
+                <div class="breadcrumbs">
+                    <a href="#">Головна <span class="icon-top-arrow"></span></a>
+                    <a href="{{ path('bambuk_cms_post_post')}}">Про Ківі <span class="icon-top-arrow"></span></a>
+                    <a href="#">Новини <span class="icon-top-arrow"></span></a>
+                    <span>{% if type == 0 %}Всі{% endif %}{% if type ==1 %}Акції{% endif %} {% if type ==2 %}Заходи{% endif %}</span>
+                </div>
+                <div class="category-trigger clearfix">
+                    <a href="{{ path('bambuk_cms_post_post')}}" class="{% if type == 0  %}active{% endif %}">Всі</a>
+                    <a class="{% if type ==1 %}active{% endif %}" href="{{ path('bambuk_cms_post_type', {'type': '1'}) }}">Акції</a>
+                    <a class="{% if type ==2 %}active{% endif %}" href="{{ path('bambuk_cms_post_type', {'type': '2'}) }}">Заходи</a>
+                </div>
+            </div>
+        </div>
+			{% for post in posts %}
+	 				 <section  class="blog-entries-container">
+    					<div class="row">
+        					<div class="columns large-12">
+					            <div class="single-entry clearfix">
+					                <img width="288px" height="192px" src="{{post.image}}"/>
+					                <span class="date">{{ post.created|date("d.m.Y") }}</span>
+					                <a href="{{ path('bambuk_cms_post_show', {'id': post.id}) }}"><h5>{{ post.title }}</h5></a>
+					                <div class="entry-body">
+					                    <p>{{ post.description }}</p>  
+					                </div>
+					                {% for club in post.club %}
+					               		 <span class="tags"><a href="{{ path('bambuk_cms_post_tag', {'id': club.id}) }}">#{{ club.name }}</a></span>
+					                {% endfor %}
+					            </div>
+					        </div>
+					    </div>
+					</section>	        
+            {% endfor %}
+            
+    <div class="row">
+        <div class="columns large-12">
+            <div class="fake-banners">
+	        {% set i = 0 %}
+	        {% for banner in section.banners %}
+	        	{% if i%2 %}
+	 				 {% set img_class = 'fright' %}   
+	 			{% else %}
+	 				{% set img_class = 'fleft' %} 	    	
+	            {% endif %}
+	       		 <a href="{{ banner.link }}">
+	                <img class={{ img_class }} src="{{ banner.image }}" alt="{{ banner.title }}"/>
+	             </a>
+	        	{% set i=i+1 %}            
+		    {% endfor %} 
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

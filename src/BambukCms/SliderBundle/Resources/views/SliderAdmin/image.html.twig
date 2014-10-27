@@ -1,0 +1,6 @@
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+{% block field %}
+{% spaceless %}
+	<img height="80px" src="{{ object.image }}">
+{% endspaceless %}
+{% endblock %}

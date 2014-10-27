@@ -1,0 +1,196 @@
+.posts{
+    overflow-x: hidden;
+    background: $black;
+    
+    .list { 
+        width: 100vw;
+        overflow: hidden;
+    }
+   
+    // post style
+    .post, .stamp {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        box-shadow:  0 0 1px $black;
+        display: block;
+    }
+    .post {
+        .thumb{ 
+            display: block;
+        }
+        .description {
+            background: $white;
+        }
+        .title {
+            font-size: rem-calc(20);
+            line-height: rem-calc(32);
+            padding: 24px 2rem 0 2rem;
+            margin: 0;
+            a{
+                text-decoration: none;
+                color:$darkblue;
+                font-weight: 100;
+            }
+        }
+        .copy {
+            font-size: rem-calc(14);
+            margin: rem-calc(16) rem-calc(32px);
+            line-height: rem-calc(24);
+        }
+        &:hover{
+            .social:before {
+                opacity: 1;
+            }
+            .icon{
+                opacity: 1;
+                transform: translate3d(0,0,0);
+            }
+        }
+        @media #{$medium}{
+            .description {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
+            .title {
+                padding: rem-calc(16) rem-calc(32px);
+            }
+            .copy {
+                display: none;
+            }
+        }
+        /* animation */
+        transform: translate3d(0,0,0);
+        transition: transform .8s;
+        &.vertical-post{
+            transition-duration: .7s;
+        }
+        &.square-post{
+            transition-duration: .5s;
+        }
+        
+    }
+    &.nextPage .post{
+        transition: none; 
+        transform: translate3d(0,5%,0);
+        &.vertical-post{
+            transform: translate3d(0,10%,0); 
+        }
+        &.square-post{
+            transform: translate3d(0,15%,0);  
+        }
+    }
+    
+    // formats
+    @media #{$landscape} and (max-width:640px) {
+        .post {
+            max-height: 70vh;
+        }
+    }
+
+    @media #{$medium} {
+        .page-header{
+            position: absolute;
+        }
+        .post, .stamp{
+            width: 100 / 4 * 1%;
+            float: left;
+            padding-top: 100 / 4 * 1%; 
+        }
+        .post{
+            .content { 
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top:0;
+                left: 0;     
+            }
+            .title {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+        .square-post,.vertical-post{
+            padding-top: 50%;
+            .description {
+                height: auto;
+            }
+            .title { 
+                overflow: visible;
+                white-space: normal;
+            }
+        }
+        .square-post{
+            width: 50%;
+            .copy {
+                display: block;
+            }
+        }
+        .vertical-post{
+            .thumb{
+                max-width: none;
+                height: 100%;
+            }
+        }
+    }
+    @media #{$large} {
+        .list {
+            margin: 0 12.5%;
+            width: 75%;
+        }
+        .post, .stamp {
+            width: 100 / 6 * 1%;
+            padding-top: 100 / 6 * 1%; 
+        }
+        .square-post,.vertical-post{
+            padding-top: 100 / 3 * 1%;
+        }
+        .square-post{
+            width: 100 / 3 * 1%;
+        }
+    }
+    
+    
+    
+    
+    // icons
+    .social {
+        position: absolute;
+        top: -124px;
+        padding-left: 16px;
+        padding-top: 60px;
+        width: 100%;
+        height: 124px;
+        &:before{
+            position: absolute;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            opacity: 0;
+            transition: .8s;
+            left: 0;
+            background: linear-gradient( transparent 0%,  rgba(0, 0, 0, 0.3) 100%);
+        }
+        .icon {
+            opacity: 0;
+            box-shadow: 0 0 1px 1px #FFF inset;
+            transform: translate3d(0, 10px ,0);
+        }
+    }
+    .read-more{
+        float: left;
+        margin: 16px 32px 32px;
+        line-height: 48px;
+        border: 1px solid;
+        text-decoration: none;
+        padding: 0 16px;
+        color:$darkblue;
+        &::visited {
+            opacity: .3;
+        }
+    }
+}

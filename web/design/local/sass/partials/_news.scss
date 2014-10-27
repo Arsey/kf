@@ -1,0 +1,87 @@
+
+.news {
+	width: 100%;
+	height: em(12,264);
+	position: relative;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.4);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#10ffffff', endColorstr='#10ffffff',GradientType=0 );
+	padding: em(12,11) em(12,16);
+	line-height: $line;
+	font-size: $h3_size;
+	@include box-shadow(rgba(#fff, 0.4) 1px 1px 0px);
+	border: 1px solid #76872B;
+	section {
+		margin-bottom: em(12,9);
+		@include pie-clearfix;
+		position: relative;
+		overflow: hidden;
+		height: em(12,73);
+		&:hover {
+			> .img_wrapper {
+				background: rgba(255, 255, 255, 0.3);
+			}
+		}
+		a {
+			height: 100%;
+			position: absolute;
+			width: 100%;
+			z-index: 1;
+		}
+	}
+
+	.img_wrapper {
+		@include border-radius(73px);
+		height: em(12,73);
+		width: em(12,73);
+		overflow: hidden;
+		float: left;
+		border: 1px solid #fff;
+		padding: em(12,5);
+
+		@media screen and ( min-width: 769px ) and ( max-width: 960px ) {
+			display: none;
+		}
+		@media screen and ( max-width: 320px ) {
+			display: none;
+		}
+	}
+		img {
+			@include border-radius(73px);
+			height: 100%;
+			width: 100%;
+			border: 1px solid #fff;
+		}
+}
+
+	.news_content {
+		width: 100%;
+		padding-top: em(12,6);
+		padding-left: em(12,87);
+		height: 100%;
+
+		@media screen and ( min-width: 769px ) and ( max-width: 960px ) {
+			width: 100%;
+			padding-left: 0;
+		}
+		@media screen and ( max-width: 320px ) {
+			width: 100%;
+			padding-left: 0;
+		}
+
+		h3 {
+			text-overflow: ellipsis;
+			max-height: em(12,38);
+			overflow: hidden;
+			white-space: nowrap;
+			font-size: 14px;
+		}
+		p {
+			color: $color_text;
+			text-overflow: ellipsis;
+			height: em(12,35);
+			overflow: hidden;
+			margin: em(12,7) 0;
+			line-height: em(12,18);
+		}
+	}

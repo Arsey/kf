@@ -1,0 +1,147 @@
+/* tiles styles*/
+#preloader {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1000;
+    opacity: 1;
+    transition: z-index 0 .5s;
+    .overlay {
+        background: white;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index: 1;
+        transition: .5s;
+        perspective: 400;
+        perspective-origin: 50% 50%;
+        transform: translate3d(0,0,0);
+        
+        .spinner{
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            content: '';
+            width: 80px;
+            height: 80px;
+            background: #78c0ff;
+            margin: -40px 0 0 -40px;
+            animation: preloading2 2s infinite both;
+            
+        }
+    }
+    .loaded.sub-loading & { // push to fron when subloading without transition
+        transition: none;
+        opacity: 1;
+        z-index: 2;
+        .tile{ // show tiles
+            opacity: 1;
+        }
+    }
+
+    .loaded &{
+        perspective: 400;
+        perspective-origin: 50% 50%;
+        .overlay{ // hide preloder when dom loaded
+            opacity: 0;
+            transform: translate3d(0,0,100px);
+        }
+        z-index: 0; // push to rear layer
+    }
+}
+
+
+
+.prevPage{
+    transform: translateZ(0);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    &>*,&{
+         transition: .3s;
+    }
+}
+.nextPage{
+    transform: translateZ(0);
+}
+
+
+.subloading-state {
+    //overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    #preloader {
+        z-index: 2;
+    }
+    .prevPage.homepage{
+        //background: white;
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.subloading-pan {
+    position: absolute;
+    top:0;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    .tileOverlay{
+        float: left;
+        width: 100 / 8 * 1%;
+        padding-top: 100 / 8 * 1%;
+        height: 0;
+        transition: 0 ;
+        background-color: rgba(255,255,255,.0);
+        transform: translateZ(0);
+        background-size: 100%;
+        &.visible{
+            opacity: 1;
+            transition: 0s;
+        }
+        &.hide {
+            transition: .2s;
+        }
+    }
+}
+
+
+
+@keyframes preloading2 {
+    0%{
+        transform: rotateY(0deg);
+    }
+    25%{
+        transform: rotateY(0deg);
+    }
+    50%{
+        transform: rotateY(180deg);
+    }
+    75%{
+        transform: rotateY(180deg);
+    }
+    100%{
+        transform: rotateY(180deg) rotateX(180deg);
+    }
+}
+

@@ -1,0 +1,141 @@
+
+// онлайн консультація
+
+.consultation {
+	height: $line*3;
+	background: image-url('consultation.png') no-repeat left center;
+	position: relative;
+	margin-bottom: em(14,15);
+	float: right !important;
+	overflow: hidden;
+	&:hover {
+		background: image-url('consultation_hover.png') no-repeat left center;
+	}
+
+	@media screen and (max-width: 600px) {
+		display: none;
+	}
+	@media screen and (min-width: 601px) and (max-width: 768px)  {
+		height: em(14,43);
+		@include background-size(em(14,41));
+		width: em(14,176);
+		float: right;
+		&:hover {
+			@include background-size(em(14,41));
+		}
+	}
+	@media screen and (max-width: 600px) {
+		height: em(14,98);
+		background: image-url('consultation.png') no-repeat top center;
+		text-align: center;
+		@include background-size(em(14,38));
+		max-width: em(14,305);
+		margin: em(14,14) auto 0;
+		&:hover {
+			background: image-url('consultation_hover.png') no-repeat top center;
+			@include background-size(em(14,38));
+		}
+		a {
+			padding-top: em(14,49);
+			padding-left: 0px;
+		}
+	}
+
+	a {
+		color: $color_wite;
+		font-weight: bold;
+		text-decoration: none;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		padding-left: em(14,82);
+		padding-top: em(14,15);
+
+		@media screen and (min-width: 601px) and (max-width: 768px)  {
+			padding-left: em(14,52);
+			padding-top: em(14,2);
+		}
+	}
+}
+
+.consultation_2 {
+	display: none;
+	
+	@media screen and (max-width: 768px) {
+		display: block;
+		position: absolute;
+		right: 0px;
+		width: em(14,210);
+		margin-top: em(14,6);
+		line-height: em(14,46);
+		text-align: right;
+		color: #fff;
+		background: image-url('consultation.png') no-repeat left center;
+		background-size: em(14,46);
+		z-index: 1;
+		margin-right: 0.57143em;
+		&:hover {
+			background: image-url('consultation_hover.png') no-repeat left center;
+			background-size: em(14,46);
+		}
+	}
+	@media screen and (max-width: 720px) {
+		display: none;
+	}
+
+}
+
+
+// гасло 
+.motto {
+	background: image-url('motto.png') no-repeat center center;
+	width: em(14,176);
+	height: em(14,155);
+	position: absolute;
+	left: em(14,355);
+	top: em(14,-92);
+	z-index: 0;
+
+	@media screen and (min-width: 601px) and (max-width: 768px)  {
+		left: em(14,272);
+		top: em(14,-99);
+	}
+	@media only screen and (max-width: 600px) {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .row {
+// 	outline: 1px solid #fff;
+// }

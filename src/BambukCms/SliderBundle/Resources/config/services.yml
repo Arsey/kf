@@ -1,0 +1,13 @@
+parameters:
+#    bambuk_cms_slider.example.class: BambukCms\SliderBundle\Example
+services:
+    form.type.translatable:
+      class: Ladela\PersonalTranslationsWidgetBundle\Form\Type\TranslatableFieldType
+      arguments: [ @service_container ]
+      tags:
+       - { name: form.type, alias: translatable_field }             
+    slider.BambukCms.admin.slider:
+      class: BambukCms\SliderBundle\Admin\SliderAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: BambukCms, label: Слайдер }
+      arguments: [null, BambukCms\SliderBundle\Entity\Slider, BambukCmsSliderBundle:SliderAdmin]

@@ -1,0 +1,180 @@
+{% extends 'SonataAdminBundle:CRUD:base_edit.html.twig' %}
+{% block form %}
+    {{ block('parentForm') }}
+    <link href="http://cdn.kendostatic.com/2014.2.903/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="http://cdn.kendostatic.com/2014.2.903/styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="http://cdn.kendostatic.com/2014.2.903/styles/kendo.dataviz.min.css" rel="stylesheet" />
+    <link href="http://cdn.kendostatic.com/2014.2.903/styles/kendo.dataviz.default.min.css" rel="stylesheet" />
+    <script src="http://cdn.kendostatic.com/2014.2.903/js/kendo.all.min.js"></script>
+    <div id="grid"></div>
+     <script>     
+      $(document).ready(function () {   
+	      var gridSchedule = {};
+	      gridSchedule.schedules = [];
+	      $.ajax({
+	        url: "{{ url('bambuk_cms_club_homepage_get')}}?salle={{ object.id }}",
+	        dataType: 'json',
+	        async: false,
+	        success: function (data, textStatus) {    
+	          gridSchedule.schedules = data; 
+	        }
+	      });
+		      var dataSource = new kendo.data.DataSource({
+		        pageSize: 100,
+		        data: gridSchedule.schedules,
+		        autoSync: true,
+		        schema: {
+		          model: {
+		            fields: {
+		                   hour: { validation: { required: true } },
+   		                   monday: { validation: { required: false } },
+		                   tuesday: { validation: { required: false } },
+		                   wednesday: { validation: { required: false } },
+		                   thursday: { validation: { required: false } },
+		                   friday: { validation: { required: false } },
+		                   saturday: { validation: { required: false } },
+		                   sunday: { validation: { required: false } }
+		              }
+		          }
+		        }
+		      });
+		      $("#grid").kendoGrid({
+		        dataSource: dataSource,
+		        pageable: true,
+		        height: 260,
+		        editable : {
+        			createAt:"bottom"
+      			},
+      			navigatable: true,
+		        toolbar: ["create","save"],
+		        saveChanges: function(e) {
+		          var data = $("#grid").data("kendoGrid").dataSource.data();
+		          var dataError = false;
+		          $.ajax({
+		            type: "POST",
+		            url: "{{ url('bambuk_cms_club_homepage_set')}}?salle={{ object.id }}",
+		            dataType: "json",
+		            data: {
+		              data: JSON.stringify(data)
+		            },
+		            success: function(response) {
+		              alert("Ваші зміни успішно збережені");
+		            }        
+		          });
+		        },
+			  columns: [
+			          { field:"hour", title:"Години", width: "150px"},
+			          { field:"monday", title:"Понеділок", width: "150px", editor: mondayEditor},
+			          { field:"tuesday", title:"Вівторок", width: "150px", editor: tuesdayEditor},
+			          { field:"wednesday", title:"Середа", width: "150px", editor: wednesdayEditor},
+			          { field:"thursday", title:"Четвер", width: "150px", editor: thursdayEditor},
+			          { field:"friday", title:"Пятниця", width: "150px", editor: fridayEditor},
+			          { field:"saturday", title:"Субота", width: "150px", editor: saturdayEditor},
+			          { field:"sunday", title:"Неділя", width: "150px", editor: sundayEditor},			          
+			          { command: "destroy",text: "Видалити", title: " ", width: "110px" }],
+		        editable: true,
+		        height: 500
+		      });
+    
+       var monday = {};
+       monday.schedules = [];
+       var tuesday = {};
+       tuesday.schedules = [];
+       var wednesday = {};
+       wednesday.schedules = [];
+       var thursday = {};
+       thursday.schedules = [];
+       var friday = {};
+       friday.schedules = [];
+       var sunday = {};
+       sunday.schedules = [];
+       var saturday = {};
+       saturday.schedules = [];                                                        
+       $.ajax({
+          url: "{{ url('bambuk_cms_club_homepage_get_program')}}",
+          dataType: 'json',
+          async: false,
+          success: function (data, textStatus) { 
+				  	monday.schedules = data;
+				  	tuesday.schedules = data;
+				  	wednesday.schedules = data;
+				  	thursday.schedules = data;
+				  	friday.schedules = data;
+				  	saturday.schedules = data;
+				  	sunday.schedules = data;
+          }
+       });
+
+           
+               
+       function mondayEditor(container, options) {
+            $('<input data-text-field="monday" data-value-field="monday" data-bind="value:' + options.field + '"/>').appendTo(container).kendoDropDownList({
+                    autoBind: false,
+                    dataSource: {
+       					 data: monday.schedules
+                    }
+                });
+        }
+       function tuesdayEditor(container, options) {
+            $('<input data-text-field="tuesday" data-value-field="tuesday" data-bind="value:' + options.field + '"/>').appendTo(container).kendoDropDownList({
+                    autoBind: false,
+                    dataSource: {
+       					 data: tuesday.schedules
+                    }
+                });
+        }
+       function wednesdayEditor(container, options) {
+            $('<input data-text-field="wednesday" data-value-field="wednesday" data-bind="value:' + options.field + '"/>').appendTo(container).kendoDropDownList({
+                    autoBind: false,
+                    dataSource: {
+       					 data: wednesday.schedules
+                    }
+                });
+        }
+        function thursdayEditor(container, options) {
+            $('<input data-text-field="thursday" data-value-field="thursday" data-bind="value:' + options.field + '"/>').appendTo(container).kendoDropDownList({
+                    autoBind: false,
+                    dataSource: {
+       					 data: thursday.schedules
+                    }
+                });
+        }
+        function fridayEditor(container, options) {
+            $('<input data-text-field="friday" data-value-field="friday" data-bind="value:' + options.field + '"/>').appendTo(container).kendoDropDownList({
+                    autoBind: false,
+                    dataSource: {
+       					 data: friday.schedules
+                    }
+                });
+        }
+       function saturdayEditor(container, options) {
+            $('<input data-text-field="saturday" data-value-field="saturday" data-bind="value:' + options.field + '"/>').appendTo(container).kendoDropDownList({
+                    autoBind: false,
+                    dataSource: {
+       					 data: saturday.schedules
+                    }
+                });
+        }
+        function sundayEditor(container, options) {
+            $('<input data-text-field="sunday" data-value-field="sunday" data-bind="value:' + options.field + '"/>').appendTo(container).kendoDropDownList({
+                    autoBind: false,
+                    dataSource: {
+       					 data: sunday.schedules
+                    }
+                });
+        }                
+    });
+            </script>
+    
+{% endblock %}
+
+{% block actions %}
+     <div class="sonata-actions">
+         <ul>
+             {% if admin.hasroute('list') and admin.isGranted('LIST')%}
+                 <li class="btn sonata-action-element"><a href="{{ admin.generateUrl('list') }}">{{ 'link_action_list'|trans({}, 'SonataAdminBundle') }}</a></li>
+             {% endif %}
+         </ul>
+     </div>
+
+{% endblock %}

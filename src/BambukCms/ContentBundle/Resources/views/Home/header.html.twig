@@ -1,0 +1,127 @@
+<section id="header" class="header-container">
+    <div class="row">
+        <div class="columns large-12">
+<header class="clearfix">
+    <a href="/"><img class="kivi-logo" src="/frontend/img/logo@2x.png" width="134" height="81"/></a>
+    <div class="top-menu">
+        <a href="#" class="link-with-icon">
+            <span class="menu-and-icon">
+                <span class="icon-phone"></span>
+            </span>
+            <span>Контакти</span>
+        </a>
+        <a href="#" class="link-with-icon">
+            <span class="menu-and-icon">
+                <span class="icon-calendar-icon"></span>
+            </span>
+            <span>Розклад та ціни</span>
+        </a>
+        <a href="#">
+            <span class="text-btn">
+                ВСТУПИТИ В КЛУБ
+            </span>
+        </a>
+    </div>
+    <div class="main-menu">
+        <ul>
+            <li><a href="{{ path('bambuk_cms_post_post')}}">Про Ківі</a></li>
+            <li><a href="#" id="clubs">Клуби</a></li>
+            <li><a href="/design/club.html">Ківі TV</a></li>
+            <li><a href="#">Магазин</a></li>
+        </ul>
+    </div>
+</header>           
+
+<div class="slogan">
+                <p>
+                    Ми робимо все<br/>
+                    для того, щоб жінка<br/>
+                    <b>почувала себе</b><br/>
+                    <span class="green-salad-txt"><b>здоровою, привабливою</b></span><br/>
+                    та сильною
+                </p>
+            </div>
+        </div>
+</div>
+<div class="clubs-list-menu slideMenu">
+        <div class="row">
+            <div class="columns large-12">
+                <span class="icon-closed"></span> 
+                <span class="block-hedader">Clubs List</span>
+                <div class="lists-box">
+                    <div class="one-city-list">
+                        <span><span class="icon-icon-place"></span> м.Львів</span>
+                        <ul>
+                            <li><a href="">Масарика 2</a></li>
+                            <li><a href="/club.html">Наукова 43б</a></li>
+                            <li><a href="">С.Бандери 18</a></li>
+                        </ul>
+                    </div>
+<!--                    <div class="one-city-list">
+                        <span><span class="icon-icon-place"></span> м.Київ</span>
+                        <ul>
+                            <li><a href="">Масарика 2</a></li>
+                            <li><a href="">Наукова 43б</a></li>
+                            <li><a href="">С.Бандери 18</a></li>
+                        </ul>
+                    </div>
+                    <div class="one-city-list">
+                        <span><span class="icon-icon-place"></span> м.Рівне</span>
+                        <ul>
+                            <li><a href="">Масарика 2</a></li>
+                            <li><a href="">Наукова 43б</a></li>
+                            <li><a href="">С.Бандери 18</a></li>
+                        </ul>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div><div class="services-menu-container">
+        <div class="row">
+            <span class="icon-closed trigger"></span>
+            <div class="tabs-container clearfix">
+                <div class="menu-box clearfix">
+                    <dl data-tab="" class="tabs">
+                         {% for menu in menus %}	
+						 <dd class="active">
+                            <a href="#panel{{ menu.id }}">
+                                <div class="icons-box" id="block-{{ menu.id }}">
+                                    <!--<span class="icon-personal-lessons icon-all"></span>-->
+                                    <img src="{{ menu.icon }}" width="150" height="98"/>
+                                </div>
+                                <span>{{ menu.title }}</span>
+                            </a>
+                         </dd>
+	        			{% endfor %} 
+                    </dl>
+                </div>
+                <div class="tabs-content clearfix">
+                    <div class="menus-list-menu clearfix">
+                     {% for menu in menus %}
+                       <div id="panel{{ menu.id }}" class="content active">
+                            <div class="block-{{ menu.id }} hidden-menu">
+                                <div class="row">
+                                {% if menu.children|length >  0 %} 
+                                	{% for menu in menu.children %}
+	                                    <div class="columns large-3">
+	                                        <h6>{{ menu.title }}</h6>
+	                                        <ul>
+	                                        {% if menu.children|length >  0 %} 
+	                                        	{% for menu in menu.children %}
+	                                           		 <li><a href="{{ path('bambuk_cms_page_show', {'slug': menu.slug}) }}">{{ menu.title }}</a></li>
+												{% endfor %}
+											{% endif %} 		                                        
+	                                        </ul>
+	                                    </div>
+                                    {% endfor %}
+                                {% endif %}    
+                                </div>
+                            </div>
+                        </div>
+                     {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

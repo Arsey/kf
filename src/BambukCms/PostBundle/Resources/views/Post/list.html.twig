@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+{% block content %}
+{% trans %}Публікації{% endtrans %}
+{% for post in posts %}
+    <article class="post">
+        <header>
+            <h2><a href="{{ path('bambuk_cms_post_show', {'id': post.id}) }}">{{ post.title }}</a></h2>
+        </header>
+        <img height="180px" src="{{ post.image }}" alt="{{ post.title }}" />
+        <div>
+            <p>{{ post.description }}</p>
+        </div>
+    </article><hr>
+{% endfor %}    
+{% endblock %}

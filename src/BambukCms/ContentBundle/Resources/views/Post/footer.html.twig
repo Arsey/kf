@@ -1,0 +1,115 @@
+<footer>
+    <div class="pre-footer-links">
+        <div class="row">
+        	{% for menu in menu.children %}
+                <div class="columns large-3">
+                    <h6>{{ menu.title }}</h6>
+                    <div class="links">
+                    {% if menu.children|length >  0 %} 
+                    	{% for menu in menu.children %}
+                       		 <a href="{{ path('bambuk_cms_page_show', {'slug': menu.slug}) }}">{{ menu.title }}</a>
+						{% endfor %}
+					{% endif %} 		                                        
+                     </div>
+                </div>
+            {% endfor %}
+            <div class="columns large-3">
+                <h6>Підписатись на розсилку</h6>
+                <form>
+                    <input type="text" placeholder="Ваш e-mail"/>
+                    <span class="icon-icon-mail"><input type="submit" value=""/></span>
+                </form>
+                <h6>Ми в соціальних мережах</h6>
+                <div class="social">
+                    <a href="#"><span class="icon-facebook-icon"></span></a>
+                    <a href="#"><span class="icon-vkontakte-icon"></span></a>
+                    <a href="#"><span class="icon-twitter-icon"></span></a>
+                    <a href="#"><span class="icon-you-tube"></span></a>
+                </div>
+                <div class="go-top-btn">
+                    <a class="link-with-icon-56" href="#top">
+                        <span class="menu-and-icon">
+                            <img width="26" height="32" src="/frontend/img/icons/arrow-top.png">
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  <div class="footer-bottom">
+        <div class="row">
+            <div class="columns large-3">
+                <img class="kivi-logo fleft" width="134" height="81" src="/frontend/img/logo@2x.png">
+            </div>
+            <div class="columns large-9">
+                <div class="select-lang-box clearfix">
+                    <form>
+                        <select name="city" class="custom-select">
+                           {% for city in cities %}
+                        	  <option data-id={{ city.id }}>м.{{ city.name }}</option>
+				           {% endfor %}
+                        </select>
+                    </form>
+                    <div class="fright">
+                        <a class="link-with-icon {% if app.request.locale == 'uk' %} active {% endif %}" href="/uk">
+                            <span class="menu-and-icon">
+                                <span>Укр</span>
+                            </span>
+                        </a>
+                        <a class="link-with-icon {% if app.request.locale == 'ru' %} active {% endif %}" href="/ru">
+                            <span class="menu-and-icon">
+                                <span>Рус</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                {% for city in cities %}	
+	                <div class="row" data-city={{ city.id }}>
+		                {% for club in city.clubs %}
+		                    <div class="columns large-4">
+		                        <span class="icon-icon-place"></span>
+		                        <p><span>{{ club.name }}</span>
+		                            {{ club.phone }}</p>
+		                    </div>
+		               	{% endfor %}
+	                </div>
+	            {% endfor %}    
+	            </div>
+        </div>
+        <div class="copyr-box">
+            <div class="row">
+                <div class="columns large-12">
+                    <p class="fleft">© 2014  «Ківіфітнес»</p>
+                    <div class="social fright">
+                        <a href="#"><span class="icon-facebook-icon"></span></a>
+                        <a href="#"><span class="icon-vkontakte-icon"></span></a>
+                        <a href="#"><span class="icon-twitter-icon"></span></a>
+                        <a href="#"><span class="icon-you-tube"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="/frontend/js/build/index.min.js"></script>
+<script src="/frontend/js/vendor/foundation.min.js"></script>
+<script src="/frontend/js/vendor/foundation.orbit.js"></script>
+<script src="/frontend/js/vendor/foundation.tab.js"></script>
+<script type="text/javascript">
+$(document).foundation({
+    orbit: {
+        animation: 'slide',
+        swipe: true,
+        slide_number: false,
+        timer: false,
+        timer_speed: 1000,
+        pause_on_hover: true,
+        animation_speed: 500,
+        navigation_arrows: false,
+        bullets: true
+    },
+    tab: {callback: function(tab) {
+            console.log(tab);
+        }}
+});
+</script> 

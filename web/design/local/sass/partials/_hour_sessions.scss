@@ -1,0 +1,260 @@
+
+// обрати адрес клубу
+.adress_row {
+	padding: 0;
+	overflow: visible;
+	text-align: center;
+	position: absolute;
+	margin-left: -8px;
+
+	@media only screen and (min-width: 720px) and (max-width: 768px) {
+		height: 47px;
+	}
+	@media only screen and (min-width: 720px) {
+		text-align: left;
+	}
+
+}
+	.adress {
+		background: rgba(255, 255, 255, 0.6);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#99ffffff',endColorstr='#99ffffff',GradientType=0);
+		max-width: em(14,305);
+		margin: 0 auto;
+		margin-top: em(14,8);
+		position: absolute;
+		width: 100%;
+
+		@media screen and (max-width: 768px) {
+			position: static;
+			display: inline-block;
+		}
+		@media screen and (min-width: 769px) {
+			margin-left: 7px;
+		}
+
+		.ouup {
+			display: block;
+		}
+
+		li {
+			height: em(14,32);
+			border-bottom: 1px solid #AFAFAF;
+			position: relative;
+			display: none;
+			z-index: 1;
+			&:hover {
+				background: rgba(255, 255, 255, 0.7);
+			}
+			&:nth-child(1) {
+				display: block;
+				background: rgba(255, 255, 255, 0.7);
+				&:hover, &:active {
+					background: rgba(255, 255, 255, 1);
+				}
+				a {
+					color: $color_span;
+				}
+			}
+		}
+
+		a {
+			text-decoration: none;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+				color: $color_text;
+				font-weight: bold;
+				line-height: em(14,31);
+
+			@media screen and (min-width: 768px) {
+				padding-left: em(14,13);
+			}
+		}
+	}
+
+			// кнопка вибору клубу
+			.knopa {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				width: em(14,34);
+				height: 100%;
+				cursor: pointer;
+				border-left: 1px solid #AFAFAF;
+				z-index: 1;
+				&:after {
+					content: "";
+					position: absolute;
+					top: em(14,13);
+					border: em(14,7) solid;
+					border-color: $color_span transparent transparent;
+					left: em(14,9);
+				}
+			}
+
+
+	// години сеансів
+	.club_adress {
+		text-align: center;
+	}
+	.session_row {
+		float: right !important;
+		height: 169px;
+		margin-top: 48px;
+		overflow: hidden;
+
+		@media screen and (min-width: 769px) {
+			height: 92px;
+		}
+		@media screen and (min-width: 769px) {
+			margin-top: 62px;
+		}
+		@media screen and (min-width: 769px) {
+			margin-top: 0;
+		}
+
+	}
+	.sessions {
+		height: 100%;
+		overflow-x: scroll;
+		-webkit-overflow-scrolling: touch;
+
+		@media screen and (min-width: 961px) {
+			overflow: auto;
+		}
+	}
+		.hour_sessions {
+			min-width: 800px;
+			overflow: hidden;
+			height: em(14,43);
+			margin: 0 auto;
+			text-align: center;
+			margin-top: em(14,14);
+			margin-left: -40px;
+
+			@media only screen and (min-width: 769px) {
+				margin-top: 0;
+			}
+			@media only screen and (min-width: 769px) {
+				margin-left: 0px;
+			}
+			@media only screen and (min-width: 961px) {
+				min-width: 100%;
+			}
+
+			> li {
+				display: inline-block;
+				margin-left: em(14,5);
+				@include border-radius(em(14,50));
+				> a {
+					display: block;
+					width: em(14,43);
+					height: em(14,43);
+					position: relative;
+						line-height: em(14,43);
+						text-align: center;
+						text-decoration: none;
+						font-weight: bold;
+						font-size: $p_size;
+						color: $color_wite;
+					@include border-radius(em(14,50));
+					border: 1px solid rgba(255,255,255,0.2);
+
+					@media only screen and (min-width: 961px) {
+						border: none;
+					}
+
+					&:after, {
+						content: "00";
+						position: absolute;
+						display: none;
+						font-size: em(14,11);
+						top: -9px;
+						right: em(14,-4);
+					}
+				}
+				&:hover, &:active, &.active {
+					> a {
+						background: rgba(255, 255, 255, 0.4);
+						filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80ffffff', endColorstr='#66ffffff',GradientType=0);
+						&:after {
+							display: block;
+						}
+					}
+				}
+				&.active {
+					> ul {
+						display: block;
+					}
+				}
+
+				ul {
+					display: none;
+					position: absolute;
+					left: 12%;
+					overflow: hidden;
+					width: 80%;
+					height: 95px;
+					padding-top: 20px;
+					margin: 0;
+						text-align: center;
+
+					@media screen and (min-width: 769px ) {
+						top: 45px;
+						overflow: hidden;
+						padding-top: 0px;
+						width: 100%;
+						left: 0;
+						height: 47px;
+							text-align: left;
+					}
+
+					@media screen and (max-width: 768px ) {
+						overflow-y: scroll;
+						// height: em(14,33);
+						// margin-top: em(14,10);
+					}
+
+					li {
+						float: left;
+						margin-left: 3.2%;
+
+						@media only screen and (max-width: 768px) and (min-width: 601px) {
+							margin-left: 2.5%;
+						}
+						@media screen and (max-width: 720px) {
+							float: none;
+							// margin-bottom: em(14,14);
+							margin-left: 0;
+						}
+						a {
+							text-decoration: none;
+							font-weight: bold;
+							font-size: $p_size;
+							color: $color_wite;
+							line-height: 17px;
+							margin: 6px 0;
+
+							@media screen and (min-width: 721px) {
+								line-height: 10px;
+							}
+
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+					}
+					span {
+						color: $color_span_2;
+					}
+
+				}
+
+			}
+		}
+
+
+
+.top_hour_sessions {
+	top: -8px;
+}

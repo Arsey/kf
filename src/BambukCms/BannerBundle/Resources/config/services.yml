@@ -1,0 +1,13 @@
+parameters:
+#    bambuk_cms_banner.example.class: BambukCms\BannerBundle\Example
+services:
+    form.type.translatable:
+      class: Ladela\PersonalTranslationsWidgetBundle\Form\Type\TranslatableFieldType
+      arguments: [ @service_container ]
+      tags:
+       - { name: form.type, alias: translatable_field }             
+    banner.BambukCms.admin.banner:
+      class: BambukCms\BannerBundle\Admin\BannerAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: BambukCms, label: Банери }
+      arguments: [null, BambukCms\BannerBundle\Entity\Banner, BambukCmsBannerBundle:BannerAdmin]

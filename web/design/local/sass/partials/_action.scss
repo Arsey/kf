@@ -1,0 +1,36 @@
+
+.action_block {
+	margin-top: 0px;
+	padding-top: $line;
+	padding: 0;
+
+	@media screen and ( max-width: 410px ) {
+		float: none;
+		padding: $line em(14,8) 0 em(14,8);
+	}
+
+	img {
+		@include box-shadow(rgba(#fff, 0.4) 1px 1px 0px);
+		border: 1px solid #76872B;
+		vertical-align: top;
+		width: 100%;
+		height: auto;
+	}
+}
+	.action {
+		text-align: center;
+
+		@media screen and ( max-width: 768px ) {
+			margin-top: em(14,48);
+		}
+
+		@media screen and ( max-width: 400px ) {
+			float: left;
+			width: 100%;
+			max-width: 100%;
+			float: none!important;
+			margin: 0 auto;
+			margin-top: em(14,11);
+			padding: 0;
+		}
+	}

@@ -1,0 +1,3 @@
+bambuk_cms_banner_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: BambukCmsBannerBundle:Default:index }

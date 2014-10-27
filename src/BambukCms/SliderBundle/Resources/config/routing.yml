@@ -1,0 +1,3 @@
+bambuk_cms_slider_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: BambukCmsSliderBundle:Default:index }

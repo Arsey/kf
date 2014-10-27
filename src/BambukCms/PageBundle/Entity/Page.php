@@ -1,0 +1,563 @@
+<?php
+
+namespace BambukCms\PageBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
+use Gedmo\Translatable\Translatable;
+
+/**
+ * BambukCms\PageBundle\Entity\Page.php
+ * 
+ * @ORM\Entity
+ * @ORM\Table(name="page")
+ * @Gedmo\TranslationEntity(class="BambukCms\PageBundle\Entity\PageTranslation")
+ */
+class Page
+{
+
+    /** @ORM\Id @ORM\GeneratedValue @ORM\Column(type="integer") */
+    private $id;
+     
+    /**
+     * @ORM\Column(name="position", type="integer")
+     */
+    private $position;
+    
+
+    /**
+     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", onDelete="CASCADE")
+     * @ORM\ManyToOne(targetEntity="Page", inversedBy="children")
+     */
+    private $parent;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="BambukCms\PageBundle\Entity\Page", mappedBy="parent")
+     * @ORM\OrderBy({"position" = "ASC"})
+     */
+    private $children; 
+    
+    /**
+     * @ORM\Column(name="show_in_menu", type="boolean", nullable=true)
+     */
+    protected $show_in_menu;
+       
+    /**
+    * @ORM\Column(name="slug", type="string", length=200)
+    */
+    private $slug;
+    
+    /**
+     * @var \DateTime $created
+     *
+     * @ORM\Column(type="datetime")
+     * @Gedmo\Timestampable(on="create")
+     */
+    private $created;
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(name="title", type="string", length=200)
+     */
+    private $title;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="icon", type="string", length=255, nullable=true)
+     */
+    private $icon;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="icon_color", type="string", length=255, nullable=true)
+     */
+    private $icon_color;
+    
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(name="url", nullable=true, type="string", length=200)
+     */
+    private $url;
+
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(name="meta_keywords", type="text", nullable=true)
+     */
+    private $meta_keywords;
+    
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(name="meta_description", type="text", nullable=true)
+     */
+    private $meta_description;
+    
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(name="content", type="text", nullable=true)
+     */
+    private $content;
+
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(name="content_code", type="text", nullable=true)
+     */
+    private $content_code;
+
+    /**
+     * @ORM\Column(name="show_menu", type="boolean", nullable=true)
+     */
+    private $show_menu;
+            
+    /**
+     * @ORM\Column(name="active", type="boolean", nullable=true)
+     */
+    
+    private $active;    
+        
+     /**
+     * @ORM\OneToMany(
+     *     targetEntity="BambukCms\PageBundle\Entity\PageTranslation",
+     *  mappedBy="object",
+     *  cascade={"persist", "remove"}
+     * )
+     * @Assert\Valid(deep = true)
+     */
+    private $translations;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->translations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+   public function  getParentId(){
+     if($this->getParent()){
+       return $this->getParent()->getId();
+     }else{
+       return NULL;
+     }
+     
+   }
+    /**
+     * Set show_in_menu
+     *
+     * @param boolean $showInMenu
+     * @return Page
+     */
+    public function setShowInMenu($showInMenu)
+    {
+        $this->show_in_menu = $showInMenu;
+
+        return $this;
+    }
+
+    /**
+     * Get show_in_menu
+     *
+     * @return boolean 
+     */
+    public function getShowInMenu()
+    {
+        return $this->show_in_menu;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Page
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Page
+     */
+    public function setCreated(\DateTime $created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Page
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return Page
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string 
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Set meta_keywords
+     *
+     * @param string $metaKeywords
+     * @return Page
+     */
+    public function setMetaKeywords($metaKeywords)
+    {
+        $this->meta_keywords = $metaKeywords;
+
+        return $this;
+    }
+
+    /**
+     * Get meta_keywords
+     *
+     * @return string 
+     */
+    public function getMetaKeywords()
+    {
+        return $this->meta_keywords;
+    }
+
+    /**
+     * Set meta_description
+     *
+     * @param string $metaDescription
+     * @return Page
+     */
+    public function setMetaDescription($metaDescription)
+    {
+        $this->meta_description = $metaDescription;
+
+        return $this;
+    }
+
+    /**
+     * Get meta_description
+     *
+     * @return string 
+     */
+    public function getMetaDescription()
+    {
+        return $this->meta_description;
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     * @return Page
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string 
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     * @return Page
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean 
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Add children
+     *
+     * @param \BambukCms\PageBundle\Entity\Page $children
+     * @return Page
+     */
+    public function addChild(\BambukCms\PageBundle\Entity\Page $children)
+    {
+        $this->children[] = $children;
+
+        return $this;
+    }
+
+    /**
+     * Remove children
+     *
+     * @param \BambukCms\PageBundle\Entity\Page $children
+     */
+    public function removeChild(\BambukCms\PageBundle\Entity\Page $children)
+    {
+        $this->children->removeElement($children);
+    }
+
+    /**
+     * Get children
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getChildren()
+    {
+        return $this->children;
+    }
+
+    /**
+     * Add translations
+     *
+     * @param \BambukCms\PageBundle\Entity\PageTranslation $translations
+     * @return Page
+     */
+    public function addTranslation(PageTranslation $t)
+    {
+        if (!$this->translations->contains($t)) {
+            $this->translations[] = $t;
+            $t->setObject($this);
+        }
+    }
+
+    /**
+     * Remove translations
+     *
+     * @param \BambukCms\PageBundle\Entity\PageTranslation $translations
+     */
+    public function removeTranslation(\BambukCms\PageBundle\Entity\PageTranslation $translations)
+    {
+        $this->translations->removeElement($translations);
+    }
+
+    /**
+     * Get translations
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTranslations()
+    {
+        return $this->translations;
+    }
+
+    /**
+     * Set show_menu
+     *
+     * @param boolean $showMenu
+     * @return Page
+     */
+    public function setShowMenu($showMenu)
+    {
+        $this->show_menu = $showMenu;
+
+        return $this;
+    }
+
+    /**
+     * Get show_menu
+     *
+     * @return boolean 
+     */
+    public function getShowMenu()
+    {
+        return $this->show_menu;
+    }
+    
+ public function __toString()
+    {
+        return $this->title;
+    }
+    /**
+     * Set position
+     *
+     * @param integer $position
+     * @return Page
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * Get position
+     *
+     * @return integer 
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+   
+    public function setParent(\BambukCms\PageBundle\Entity\Page $parent = null)
+    {
+        $this->parent = $parent;
+    }
+    
+    public function setParentId($parent_id)
+    {
+        $this->parent = $parent_id;
+    }
+    
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * Set icon
+     *
+     * @param string $icon
+     * @return Page
+     */
+    public function setIcon($icon)
+    {
+        $this->icon = $icon;
+
+        return $this;
+    }
+
+    /**
+     * Get icon
+     *
+     * @return string 
+     */
+    public function getIcon()
+    {
+        return $this->icon;
+    }
+
+    /**
+     * Set icon_color
+     *
+     * @param string $iconColor
+     * @return Page
+     */
+    public function setIconColor($iconColor)
+    {
+        $this->icon_color = $iconColor;
+
+        return $this;
+    }
+
+    /**
+     * Get icon_color
+     *
+     * @return string 
+     */
+    public function getIconColor()
+    {
+        return $this->icon_color;
+    }
+
+
+    /**
+     * Set content_code
+     *
+     * @param string $contentCode
+     * @return Page
+     */
+    public function setContentCode($contentCode)
+    {
+        $this->content_code = $contentCode;
+
+        return $this;
+    }
+
+    /**
+     * Get content_code
+     *
+     * @return string 
+     */
+    public function getContentCode()
+    {
+        return $this->content_code;
+    }
+}

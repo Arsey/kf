@@ -1,0 +1,781 @@
+
+.insert_club {
+	padding: 40px 0 96px 0;
+	background: image-url('bg.jpg') no-repeat center -260px;
+	-webkit-backface-visibility: hidden;
+}
+
+.free_content {
+	p, h1, h2, h3, span, td, th {
+		font-family: tahoma; 
+	}
+}
+
+  
+
+
+
+
+
+
+ 
+
+
+
+
+.insert_club {
+	// карусель
+	#owl-demo {
+		background: #fff;
+		@include box-shadow(rgba(255, 255, 255, 0.4) 1px 1px 0px);
+		border: 1px solid #76872B;
+		padding: 15px;
+		img {
+			border: 1px solid #858583;
+		}
+	}
+		// pagination
+		.owl-pagination {
+			position: relative;
+			top: -6px;
+			margin-top: -26px;
+				text-align: center;
+			.owl-page {
+				background: #fff;
+				@include opacity(0.5);
+				width: 8px;
+				height: 8px;
+				display: inline-block;
+				margin: 0 5px;
+				border-radius: 100%;
+				&.active {
+					background: #fff;
+					@include opacity(1);
+				}
+			}
+		}
+	// відео
+	.club_video {
+		text-align: center;
+		p {
+			padding-top: 20px;
+			padding-bottom: 8px;
+			padding-left: 7px;
+				color: #fff;
+				text-shadow: 1px 1px 1px #949494;
+				font-size: 14px;
+				font-family: tahoma;
+				font-weight: bold;
+				text-align: left;
+		}
+		> div {
+			display: inline-block;
+			border: 1px solid #88973D;
+			height: 80px;
+			margin: 0 2px;
+			cursor: pointer;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	// текст
+	.text {
+		padding-left: 18px;
+			font-family: tahoma;
+			color: #fff;
+			text-shadow: 1px 1px 1px #949494;
+			font-weight: bold;
+		h1 {
+			padding-top: 26px;
+				font-size: 36px;
+		}
+		p {
+			padding-top: 19px;
+				font-size: 18px;
+		}
+		a {
+			color: #fff;
+			font-size: 12px;
+		}
+		h2 {
+			padding-top: 33px;
+				font-size: 24px;
+		}
+		ul {
+			padding-top: 17px;
+		}
+		li {
+			position: relative;
+			margin-left: 15px;
+				font-size: 14px;
+				line-height: 24px;
+			&:after {
+				content: "";
+				position: absolute;
+				top: 9px;
+				left: -15px;
+				width: 6px;
+				height: 6px;
+				border-radius: 100%;
+				background: #fff;
+				@include box-shadow(1px 1px 2px #949494);
+			}
+		}
+	}
+}
+
+
+
+
+
+// головні програми
+.main_program {
+	height: 216px;
+	border-top: 1px solid #8B9951;
+	border-bottom: 1px solid #CCCCCC;
+	@include linear-gradient(#F4F4F4,#F0F0F0);
+	h1 {
+		width: 316px;
+		height: 48px;
+		margin: 0 auto;
+		margin-top: -48px;
+		margin-bottom: 36px;
+		background: image-url('club/main_program_h1.png') no-repeat top center;
+			color: #4c4c4c;
+			font-weight: bold;
+			font-family: tahoma;
+			font-size: 18px;
+			text-align: center;
+			line-height: 48px;
+	}
+	.program_wrapper {
+		a {
+			display: table-cell;
+			width: 1%;
+				font-size: 14px;
+				line-height: 20px;
+				color: #4c4c4c;
+				font-family: verdana;
+				text-align: center;
+				font-weight: bold;
+			&:hover {
+				color: #759900;
+				span {
+					background-position: center top;
+				}
+			}
+		}
+		.program span {
+			display: block;
+			width: 97px;
+			height: 97px;
+			margin: 0 auto;
+			margin-bottom: 12px;
+		}
+		.program_1 span {
+			background: image-url('club/prog_1.png') no-repeat bottom center;
+		}
+		.program_2 span {
+			background: image-url('club/prog_2.png') no-repeat bottom center;
+		}
+		.program_3 span {
+			background: image-url('club/prog_3.png') no-repeat bottom center;
+		}
+		.program_4 span {
+			background: image-url('club/prog_4.png') no-repeat bottom center;
+		}
+		.program_5 span {
+			background: image-url('club/prog_5.png') no-repeat bottom center;
+		}
+		.program_6 span {
+			background: image-url('club/prog_6.png') no-repeat bottom center;
+		}
+	}
+}
+
+
+// вкладки
+.title {
+	z-index: 0;
+	width: 225px !important;
+	height: 47px !important;
+	margin-top: 1px;
+	border: none !important;
+	background: image-url('club/table_top_def.png') no-repeat bottom center;
+	background-color: transparent !important;
+		font-size: 18px;
+		font-family: tahoma;
+		text-align: center;
+		clear: #4c4c4c;
+		font-weight: bold;
+	a {
+		line-height: 11px;
+	}
+}
+	// active
+	.step_club .section-container {
+		margin-top: 40px;
+		section {
+			&.active {
+				.title {
+					z-index: 3;
+					background: image-url('club/table_top_active.png') no-repeat bottom center;
+				}
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+// step_club
+.step_club {
+	padding: 78px 0 0 0;
+	h1 {
+		font-size: 36px;
+		color: #89b200;
+		text-align: center;
+		font-family: tahoma;
+		font-weight: bold;
+	}
+	// popup_details
+	tbody {
+		td {
+			position: relative;
+			.popup_details {
+				display: none !important;
+				z-index: 10;
+				display: block;
+				position: absolute;
+				bottom: 65px;
+				left: 0;
+				width: 272px;
+				min-height: 50px;
+				background: #fff;
+				background: #F5F5F5;
+				@include box-shadow(0px 1px 6px rgb(182, 182, 182));
+					color: #4c4c4c;
+					font-size: 12px;
+					line-height: 18px;
+				&:after {
+					z-index: -1;
+					content: "";
+					position: absolute;
+					bottom: -37px;
+					left: 15px;
+					border: 30px solid;
+					border-color: #fff transparent transparent transparent;
+					border-width: 20px 20px;
+					-webkit-filter: drop-shadow(0px 1px 2px rgb(182, 182, 182));
+					-moz-filter: drop-shadow(0px 1px 2px rgb(182, 182, 182));
+					-ms-filter: drop-shadow(0px 1px 2px rgb(182, 182, 182));
+					-o-filter: drop-shadow(0px 1px 2px rgb(182, 182, 182));
+					filter: drop-shadow(0px 1px 2px rgb(182, 182, 182));
+				}
+				p {
+					padding: 20px 25px;
+				}
+				&.active {
+					display: block;
+				}
+				.media_wrapper {
+					width: 100%;
+					border-top: 1px solid #D6D6D5;
+					padding: 20px 0 15px 0;
+					background: #FCFCFC;
+					.media {
+						width: 225px;
+						margin: 0 auto;
+					}
+				}
+				.more {
+					margin-top: 15px;
+					padding: 0px 25px;
+					background: #FCFCFC;
+						color: #89b300;
+						text-align: left;
+						text-decoration: underline;
+						font-weight: bold;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+			&:hover {
+				.popup_details {
+					display: block !important;
+				}
+			}
+		}
+	}
+}
+
+
+	// step_1
+	.step_1 {
+		.download_schedule {
+			display: block;
+			position: relative;
+			left: 18px;
+			width: 210px;
+			margin: 0 auto;
+			margin-top: 50px;
+				font-size: 14px;
+				font-weight: bold;
+				color: #89b200;
+				text-decoration: underline;
+				text-align: center;
+			&:hover {
+				text-decoration: none;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				top: -7px;
+				left: -28px;
+				width: 30px;
+				height: 32px;
+				background: image-url('club/ico_calendar.png') no-repeat center top;
+			}
+		}
+		// таблиця
+		table {
+			width: 100%;
+			tr {
+				&:hover {
+					td {
+						background: #f5f5f5;
+						&.active {
+							background: #94bc12;
+							border-left: 1px solid #AEC563;
+							border-right: 1px solid #AEC563;
+						}
+					}
+					.tab_1 {
+						background: #f5f5f5;
+						border-top: 1px solid #DBDBDB;
+						border-bottom: 1px solid #DBDBDB;
+					}
+				}
+			}
+			thead {
+				border: 1px solid #DBDBDB;
+			}
+			th {
+				height: 65px;
+				padding: 8px 0px 0px 8px;
+				background: #f7f7f7;
+					font-size: 12px;
+					font-weight: bold;
+			}
+			td {
+				width: 120px;
+				height: 48px;
+				padding: 5px 8px 8px 8px;
+				vertical-align: top;
+				cursor: pointer;
+				background: #f7f7f7;
+				border: 1px solid #DBDBDB;
+					font-size: 12px;
+					line-height: 17px;
+				&.active {
+					background: #a2c728;
+						color: #fff;
+				}
+				span {
+					font-size: 10px;
+				}
+			}
+			.tab_1 {
+				background: #fcfcfc;
+				border-top: 1px solid #FCFCFC;
+				border-bottom: none;
+				padding: 8px;
+				vertical-align: middle;
+					text-align: center;
+			}
+			tr {
+				&:first-child {
+					.tab_1 {
+						border-top: 1px solid #DBDBDB;
+					}
+				}
+				&:last-child {
+					.tab_1 {
+						border-bottom: 1px solid #DBDBDB;
+					}
+				}
+			}
+		}
+		// вкладки
+		.title_1 {
+			margin-left: 158px;
+		}
+		.title_2 {
+			margin-left: 143px;
+			z-index: 2;
+		}
+		.title_3 {
+			margin-left: 128px;
+			z-index: 1;
+		}
+		// коментар
+		.comment {
+			margin-top: 30px;
+			p {
+				position: relative;
+				margin: 16px 0;
+				padding-left: 137px;
+					font-size: 14px;
+					font-weight: bold;
+					color: #4d4d4d;
+				&:after {
+					content: "";
+					position: absolute;
+					top: -1px;
+					left: 88px;
+					width: 40px;
+					height: 25px;
+				}
+			}
+				.comment_1 {
+					&:after {
+						background: #F7F7F7;
+						border: 1px solid #DBDBDB;
+					}
+				}
+				.comment_2 {
+					&:after {
+						background: #A2C729;
+					}
+				}
+		}
+	}
+
+
+	// step_2
+	.step_2 {
+		// таблиця
+		table {
+			// hover
+			tr {
+				&:hover {
+					td {
+						background: #fefefe;
+						border-left: 1px solid #fefefe;
+						border-right: 1px solid #fefefe;
+							color: #759900;
+						&:last-child {
+							border-right: 1px solid #DBDBDB;
+						}
+					}
+					.tab_1 {
+						background: #fefefe;
+						border-left: 1px solid #DBDBDB;
+					}
+				}
+			}
+			.table_subtitle_1, .table_subtitle_2, .pre_bottom, .bottom {
+				&:hover {
+					td {
+						background: #fcfcfc;
+						border: 1px solid #DBDBDB;
+							color: #4d4d4d;
+						&:last-child {
+							border-right: 1px solid #DBDBDB;
+						}
+					}
+					.tab_1 {
+						background: #fcfcfc; 
+					}
+				}
+			}
+			//
+			.table_subtitle_1 {
+				td {
+					background: #fcfcfc;
+						color: #759900;
+						text-transform: uppercase;
+						font-weight: normal;
+						font-size: 12px;
+				}
+			}
+			.table_subtitle_2 {
+				td {
+					background: #fcfcfc;
+						font-size: 11px;
+						line-height: 14px;
+						font-weight: normal;
+					}
+			}
+			.pre_bottom {
+				td {
+					background: #fcfcfc;
+						text-align: left;
+				}
+			}
+			.bottom td {
+				padding: 15px 30px;
+				background: #fcfcfc;
+					text-align: left;
+				p {
+					padding: 2px 0;
+						font-weight: normal;
+				}
+			}
+			th {
+				border: 1px solid #DBDBDB;
+				height: 65px;
+				padding: 8px 0px 0px 8px;
+				background: #f7f7f7;
+				border-bottom: 1px solid #DBDBDB;
+					font-size: 14px;
+					font-weight: bold;
+					text-align: center;
+			}
+			td {
+				border: 1px solid #DBDBDB;
+				width: 120px;
+				height: 48px;
+				padding: 8px 22px;
+				background: #f5f5f5;
+				cursor: pointer;
+					text-align: center;
+					font-size: 12px;
+					font-weight: bold;
+					line-height: 15px;
+					color: #4d4d4d;
+			}
+			.tab_1 {
+				width: 220px;
+				padding: 8px 30px;
+				background: #fcfcfc; 
+					text-align: left;
+				span {
+					display: block;
+						font-weight: normal;
+				}
+			}
+		}
+		// вкладки
+		.title_1 {
+			margin-left: 262px;
+		}
+		.title_2 {
+			margin-left: 247px;
+			z-index: 2;
+		}
+	}
+
+ 
+	// step_3  
+	.step_3 {
+		.content_table {
+			&.active {
+				.person_block {
+					height: 100%;
+				}
+				.more_person {
+					background-position: center 0px;
+					&:hover {
+						background-position: center -90px;
+					}
+				}
+			}
+		}
+		// вкладки
+		.title_1 {
+			margin-left: 158px;
+		}
+		.title_2 {
+			margin-left: 143px;
+			z-index: 2;
+		}
+		.title_3 {
+			margin-left: 128px;
+			z-index: 1;
+		}
+		.person_block {
+			height: 677px;
+			overflow: hidden;
+			padding-top: 100px;
+			padding-bottom: 40px;
+			padding-left: 16px;
+			background: #fcfcfc;
+			border: 1px solid #DBDBDB;
+				text-align: left;
+		}
+		.clup_person_top {
+			position: absolute;
+			top: 47px;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 60px;
+			background: #F7F7F7;
+			border: 1px solid #CCCCCC;
+		}
+		.clup_person {
+			display: inline-block;
+			height: 290px;
+			margin: 0 4px;
+			vertical-align: top;
+			.club_thoto {
+				padding: 8px;
+				border: 1px solid #f0f0f0;
+				width: 220px;
+				height: 220px;
+				border-radius: 100%;
+				background: #fff;
+				img {
+					width: 100%;
+					border-radius: 100%;
+					@include box-shadow(1px 2px 2px #DDDDDD);
+				}
+			}
+			p {
+				margin-top: 5px;
+					font-size: 14px;
+					font-weight: bold;
+					text-align: center;
+					color: #4c4c4c;
+			}
+		}
+		.more_person {
+			z-index: 1;
+			position: relative;
+			display: block;
+			width: 84px;
+			height: 84px;
+			margin: 0 auto;
+			cursor: pointer;
+			margin-top: -42px;
+			background: image-url('club/button.png') no-repeat bottom center;
+			background-color: #fff;
+			border-radius: 100%;
+			&:hover {
+				background-position: center -181px;
+			}
+		}
+	}
+
+
+	// step_4
+	.step_4 {
+		.content_table {
+			padding: 110px 80px 5px;
+			background: #fcfcfc;
+			border: 1px solid #DBDBDB;
+		}
+		.clup_person_top {
+			position: absolute;
+			top: 46px;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 60px;
+			background: #F7F7F7;
+			border: 1px solid #CCCCCC;
+		}
+		// вкладки
+		.title {
+			margin-top: 0px;
+		}
+		.title_1 {
+			margin-left: 158px;
+		}
+		.title_2 {
+			margin-left: 143px;
+			z-index: 2;
+		}
+		.title_3 {
+			margin-left: 128px;
+			z-index: 1;
+		}
+		.club_news_clock {
+			.blog_win {
+				padding-bottom: 30px;
+					font-size: 12px;
+				> a {
+					padding: 0;
+					margin-bottom: 15px;
+						font-weight: bold;
+						color: #4c4c4c;
+						line-height: 18px;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				> .left_win {
+					float: left;
+					width: 20%;
+					overflow: hidden;
+					img {
+						float: left;
+						width: 100%;
+						height: auto;
+						border: 1px solid #E1E1E1;
+					}
+				}
+				> .right_win {
+					float: right;
+					width: 80%;
+					padding-left: 30px;
+					> a {
+						margin-top: -6px;
+						font-family: verdana;
+						font-size: 14px;
+						font-weight: bold;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+					p {
+						overflow: hidden;
+						padding-top: 10px;
+							font-size: 14px;
+							line-height: 24px;
+							font-family: tahoma;
+						a {
+							display: inline-block;
+								color: #89b300;
+								font-weight: bold;
+								line-height: 24px;
+								text-decoration: underline;
+							&:hover {
+								text-decoration: none;
+							}
+						}
+					}
+					.data {
+						display: block;
+						line-height: 24px;
+							color: #999999;
+					}
+				}
+			}
+		}
+	}
+
+
+	.banners {
+		clear: both;
+		padding: 60px 0 80px 0;
+	}
+
+
+
+
+
+
+
+

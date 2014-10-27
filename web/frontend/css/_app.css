@@ -1,0 +1,2077 @@
+/*@import "fonts";*/
+/* img */
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+/* line 11, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+/* line 30, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 41, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+/* line 51, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+[hidden],
+template {
+  display: none; }
+
+/* line 56, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+script {
+  display: none !important; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 70, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+/* line 80, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 92, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+a {
+  background: transparent; }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+/* line 100, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 108, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 122, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 131, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 139, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+/* line 148, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 156, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+hr {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+/* line 175, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+/* line 187, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+/* line 195, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 203, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 211, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 219, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+sup {
+  top: -0.5em; }
+
+/* line 223, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+/* line 235, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+/* line 243, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+/* line 255, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 267, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 278, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 289, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 303, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+/* line 315, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 328, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 340, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+/* line 350, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 362, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 374, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 383, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+/* line 394, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 407, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 293, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+meta.foundation-mq-small {
+  font-family: "/only screen and (max-width: 639px)/";
+  width: 0px; }
+
+/* line 298, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+meta.foundation-mq-medium {
+  font-family: "/only screen and (min-width:640px)/";
+  width: 640px; }
+
+/* line 303, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+meta.foundation-mq-large {
+  font-family: "/only screen and (min-width:1024px)/";
+  width: 1024px; }
+
+/* line 308, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+meta.foundation-mq-xlarge {
+  font-family: "/only screen and (min-width:1439px)/";
+  width: 1439px; }
+
+/* line 313, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+meta.foundation-mq-xxlarge {
+  font-family: "/only screen and (min-width:1921px)/";
+  width: 1921px; }
+
+/* line 321, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 327, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+html,
+body {
+  font-size: 16px; }
+
+/* line 331, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+body {
+  background: white;
+  color: #222222;
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  position: relative;
+  cursor: default; }
+
+/* line 344, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+a:hover {
+  cursor: pointer; }
+
+/* line 347, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+img,
+object,
+embed {
+  max-width: 100%;
+  height: auto; }
+
+/* line 351, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+object,
+embed {
+  height: 100%; }
+
+/* line 353, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+img {
+  -ms-interpolation-mode: bicubic; }
+
+/* line 357, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+#map_canvas img,
+#map_canvas embed,
+#map_canvas object,
+.map_canvas img,
+.map_canvas embed,
+.map_canvas object {
+  max-width: none !important; }
+
+/* line 364, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+.left {
+  float: left !important; }
+
+/* line 365, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+.right {
+  float: right !important; }
+
+/* line 366, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+.clearfix {
+  *zoom: 1; }
+  /* line 159, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+  .clearfix:before, .clearfix:after {
+    content: " ";
+    display: table; }
+  /* line 160, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+  .clearfix:after {
+    clear: both; }
+
+/* line 367, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+.text-left {
+  text-align: left !important; }
+
+/* line 368, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+.text-right {
+  text-align: right !important; }
+
+/* line 369, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+.text-center {
+  text-align: center !important; }
+
+/* line 370, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+.text-justify {
+  text-align: justify !important; }
+
+/* line 371, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+.hide {
+  display: none; }
+
+/* line 373, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+.start {
+  float: left !important; }
+
+/* line 374, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+.end {
+  float: right !important; }
+
+/* line 375, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+.text-start {
+  text-align: left !important; }
+
+/* line 376, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+.text-end {
+  text-align: right !important; }
+
+/* line 382, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* line 385, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+img {
+  display: inline-block;
+  vertical-align: middle; }
+
+/* line 395, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+textarea {
+  height: auto;
+  min-height: 50px; }
+
+/* line 398, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+select {
+  width: 100%; }
+
+/* line 198, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 1152px;
+  *zoom: 1; }
+  /* line 159, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+  .row:before, .row:after {
+    content: " ";
+    display: table; }
+  /* line 160, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+  .row:after {
+    clear: both; }
+  /* line 202, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .row.collapse > .column,
+  .row.collapse > .columns {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    float: left; }
+  /* line 205, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .row.collapse .row {
+    margin-left: 0;
+    margin-right: 0; }
+  /* line 208, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .row .row {
+    width: auto;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: none;
+    *zoom: 1; }
+    /* line 159, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+    .row .row:before, .row .row:after {
+      content: " ";
+      display: table; }
+    /* line 160, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+    .row .row:after {
+      clear: both; }
+    /* line 209, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+    .row .row.collapse {
+      width: auto;
+      margin: 0;
+      max-width: none;
+      *zoom: 1; }
+      /* line 159, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+      .row .row.collapse:before, .row .row.collapse:after {
+        content: " ";
+        display: table; }
+      /* line 160, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_global.scss */
+      .row .row.collapse:after {
+        clear: both; }
+
+/* line 213, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+.column,
+.columns {
+  position: relative;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 100%;
+  float: left; }
+
+@media only screen {
+  /* line 147, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column.small-centered,
+  .columns.small-centered {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    float: none; }
+
+  /* line 150, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column.small-uncentered,
+  .columns.small-uncentered {
+    margin-left: 0;
+    margin-right: 0;
+    float: left; }
+
+  /* line 157, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column.small-uncentered.opposite,
+  .columns.small-uncentered.opposite {
+    float: right; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-push-1 {
+    position: relative;
+    left: 8.33333%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-pull-1 {
+    position: relative;
+    right: 8.33333%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-push-2 {
+    position: relative;
+    left: 16.66667%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-pull-2 {
+    position: relative;
+    right: 16.66667%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-push-3 {
+    position: relative;
+    left: 25%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-pull-3 {
+    position: relative;
+    right: 25%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-push-4 {
+    position: relative;
+    left: 33.33333%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-pull-4 {
+    position: relative;
+    right: 33.33333%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-push-5 {
+    position: relative;
+    left: 41.66667%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-pull-5 {
+    position: relative;
+    right: 41.66667%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-push-6 {
+    position: relative;
+    left: 50%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-pull-6 {
+    position: relative;
+    right: 50%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-push-7 {
+    position: relative;
+    left: 58.33333%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-pull-7 {
+    position: relative;
+    right: 58.33333%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-push-8 {
+    position: relative;
+    left: 66.66667%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-pull-8 {
+    position: relative;
+    right: 66.66667%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-push-9 {
+    position: relative;
+    left: 75%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-pull-9 {
+    position: relative;
+    right: 75%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-push-10 {
+    position: relative;
+    left: 83.33333%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-pull-10 {
+    position: relative;
+    right: 83.33333%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-push-11 {
+    position: relative;
+    left: 91.66667%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-pull-11 {
+    position: relative;
+    right: 91.66667%;
+    left: auto; }
+
+  /* line 171, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column,
+  .columns {
+    position: relative;
+    padding-left: 8px;
+    padding-right: 8px;
+    float: left; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-1 {
+    position: relative;
+    width: 8.33333%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-2 {
+    position: relative;
+    width: 16.66667%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-3 {
+    position: relative;
+    width: 25%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-4 {
+    position: relative;
+    width: 33.33333%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-5 {
+    position: relative;
+    width: 41.66667%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-6 {
+    position: relative;
+    width: 50%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-7 {
+    position: relative;
+    width: 58.33333%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-8 {
+    position: relative;
+    width: 66.66667%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-9 {
+    position: relative;
+    width: 75%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-10 {
+    position: relative;
+    width: 83.33333%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-11 {
+    position: relative;
+    width: 91.66667%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-12 {
+    position: relative;
+    width: 100%; }
+
+  /* line 179, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  [class*="column"] + [class*="column"]:last-child {
+    float: right; }
+
+  /* line 180, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  [class*="column"] + [class*="column"].end {
+    float: left; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-offset-0 {
+    position: relative;
+    margin-left: 0% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-offset-1 {
+    position: relative;
+    margin-left: 8.33333% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-offset-2 {
+    position: relative;
+    margin-left: 16.66667% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-offset-3 {
+    position: relative;
+    margin-left: 25% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-offset-4 {
+    position: relative;
+    margin-left: 33.33333% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-offset-5 {
+    position: relative;
+    margin-left: 41.66667% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-offset-6 {
+    position: relative;
+    margin-left: 50% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-offset-7 {
+    position: relative;
+    margin-left: 58.33333% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-offset-8 {
+    position: relative;
+    margin-left: 66.66667% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-offset-9 {
+    position: relative;
+    margin-left: 75% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .small-offset-10 {
+    position: relative;
+    margin-left: 83.33333% !important; }
+
+  /* line 186, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column.small-reset-order,
+  .columns.small-reset-order {
+    margin-left: 0;
+    margin-right: 0;
+    left: auto;
+    right: auto;
+    float: left; } }
+@media only screen and (min-width: 640px) {
+  /* line 147, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column.medium-centered,
+  .columns.medium-centered {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    float: none; }
+
+  /* line 150, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column.medium-uncentered,
+  .columns.medium-uncentered {
+    margin-left: 0;
+    margin-right: 0;
+    float: left; }
+
+  /* line 157, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column.medium-uncentered.opposite,
+  .columns.medium-uncentered.opposite {
+    float: right; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-push-1 {
+    position: relative;
+    left: 8.33333%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-pull-1 {
+    position: relative;
+    right: 8.33333%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-push-2 {
+    position: relative;
+    left: 16.66667%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-pull-2 {
+    position: relative;
+    right: 16.66667%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-push-3 {
+    position: relative;
+    left: 25%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-pull-3 {
+    position: relative;
+    right: 25%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-push-4 {
+    position: relative;
+    left: 33.33333%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-pull-4 {
+    position: relative;
+    right: 33.33333%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-push-5 {
+    position: relative;
+    left: 41.66667%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-pull-5 {
+    position: relative;
+    right: 41.66667%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-push-6 {
+    position: relative;
+    left: 50%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-pull-6 {
+    position: relative;
+    right: 50%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-push-7 {
+    position: relative;
+    left: 58.33333%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-pull-7 {
+    position: relative;
+    right: 58.33333%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-push-8 {
+    position: relative;
+    left: 66.66667%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-pull-8 {
+    position: relative;
+    right: 66.66667%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-push-9 {
+    position: relative;
+    left: 75%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-pull-9 {
+    position: relative;
+    right: 75%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-push-10 {
+    position: relative;
+    left: 83.33333%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-pull-10 {
+    position: relative;
+    right: 83.33333%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-push-11 {
+    position: relative;
+    left: 91.66667%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-pull-11 {
+    position: relative;
+    right: 91.66667%;
+    left: auto; }
+
+  /* line 171, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column,
+  .columns {
+    position: relative;
+    padding-left: 8px;
+    padding-right: 8px;
+    float: left; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-1 {
+    position: relative;
+    width: 8.33333%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-2 {
+    position: relative;
+    width: 16.66667%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-3 {
+    position: relative;
+    width: 25%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-4 {
+    position: relative;
+    width: 33.33333%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-5 {
+    position: relative;
+    width: 41.66667%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-6 {
+    position: relative;
+    width: 50%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-7 {
+    position: relative;
+    width: 58.33333%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-8 {
+    position: relative;
+    width: 66.66667%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-9 {
+    position: relative;
+    width: 75%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-10 {
+    position: relative;
+    width: 83.33333%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-11 {
+    position: relative;
+    width: 91.66667%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-12 {
+    position: relative;
+    width: 100%; }
+
+  /* line 179, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  [class*="column"] + [class*="column"]:last-child {
+    float: right; }
+
+  /* line 180, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  [class*="column"] + [class*="column"].end {
+    float: left; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-offset-0 {
+    position: relative;
+    margin-left: 0% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-offset-1 {
+    position: relative;
+    margin-left: 8.33333% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-offset-2 {
+    position: relative;
+    margin-left: 16.66667% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-offset-3 {
+    position: relative;
+    margin-left: 25% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-offset-4 {
+    position: relative;
+    margin-left: 33.33333% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-offset-5 {
+    position: relative;
+    margin-left: 41.66667% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-offset-6 {
+    position: relative;
+    margin-left: 50% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-offset-7 {
+    position: relative;
+    margin-left: 58.33333% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-offset-8 {
+    position: relative;
+    margin-left: 66.66667% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-offset-9 {
+    position: relative;
+    margin-left: 75% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .medium-offset-10 {
+    position: relative;
+    margin-left: 83.33333% !important; }
+
+  /* line 186, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column.medium-reset-order,
+  .columns.medium-reset-order {
+    margin-left: 0;
+    margin-right: 0;
+    left: auto;
+    right: auto;
+    float: left; }
+
+  /* line 224, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-1 {
+    position: relative;
+    left: 8.33333%;
+    right: auto; }
+
+  /* line 227, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-1 {
+    position: relative;
+    right: 8.33333%;
+    left: auto; }
+
+  /* line 224, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-2 {
+    position: relative;
+    left: 16.66667%;
+    right: auto; }
+
+  /* line 227, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-2 {
+    position: relative;
+    right: 16.66667%;
+    left: auto; }
+
+  /* line 224, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-3 {
+    position: relative;
+    left: 25%;
+    right: auto; }
+
+  /* line 227, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-3 {
+    position: relative;
+    right: 25%;
+    left: auto; }
+
+  /* line 224, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-4 {
+    position: relative;
+    left: 33.33333%;
+    right: auto; }
+
+  /* line 227, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-4 {
+    position: relative;
+    right: 33.33333%;
+    left: auto; }
+
+  /* line 224, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-5 {
+    position: relative;
+    left: 41.66667%;
+    right: auto; }
+
+  /* line 227, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-5 {
+    position: relative;
+    right: 41.66667%;
+    left: auto; }
+
+  /* line 224, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-6 {
+    position: relative;
+    left: 50%;
+    right: auto; }
+
+  /* line 227, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-6 {
+    position: relative;
+    right: 50%;
+    left: auto; }
+
+  /* line 224, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-7 {
+    position: relative;
+    left: 58.33333%;
+    right: auto; }
+
+  /* line 227, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-7 {
+    position: relative;
+    right: 58.33333%;
+    left: auto; }
+
+  /* line 224, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-8 {
+    position: relative;
+    left: 66.66667%;
+    right: auto; }
+
+  /* line 227, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-8 {
+    position: relative;
+    right: 66.66667%;
+    left: auto; }
+
+  /* line 224, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-9 {
+    position: relative;
+    left: 75%;
+    right: auto; }
+
+  /* line 227, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-9 {
+    position: relative;
+    right: 75%;
+    left: auto; }
+
+  /* line 224, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-10 {
+    position: relative;
+    left: 83.33333%;
+    right: auto; }
+
+  /* line 227, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-10 {
+    position: relative;
+    right: 83.33333%;
+    left: auto; }
+
+  /* line 224, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-11 {
+    position: relative;
+    left: 91.66667%;
+    right: auto; }
+
+  /* line 227, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-11 {
+    position: relative;
+    right: 91.66667%;
+    left: auto; } }
+@media only screen and (min-width: 1024px) {
+  /* line 147, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column.large-centered,
+  .columns.large-centered {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    float: none; }
+
+  /* line 150, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column.large-uncentered,
+  .columns.large-uncentered {
+    margin-left: 0;
+    margin-right: 0;
+    float: left; }
+
+  /* line 157, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column.large-uncentered.opposite,
+  .columns.large-uncentered.opposite {
+    float: right; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-push-1 {
+    position: relative;
+    left: 8.33333%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-pull-1 {
+    position: relative;
+    right: 8.33333%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-push-2 {
+    position: relative;
+    left: 16.66667%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-pull-2 {
+    position: relative;
+    right: 16.66667%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-push-3 {
+    position: relative;
+    left: 25%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-pull-3 {
+    position: relative;
+    right: 25%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-push-4 {
+    position: relative;
+    left: 33.33333%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-pull-4 {
+    position: relative;
+    right: 33.33333%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-push-5 {
+    position: relative;
+    left: 41.66667%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-pull-5 {
+    position: relative;
+    right: 41.66667%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-push-6 {
+    position: relative;
+    left: 50%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-pull-6 {
+    position: relative;
+    right: 50%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-push-7 {
+    position: relative;
+    left: 58.33333%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-pull-7 {
+    position: relative;
+    right: 58.33333%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-push-8 {
+    position: relative;
+    left: 66.66667%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-pull-8 {
+    position: relative;
+    right: 66.66667%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-push-9 {
+    position: relative;
+    left: 75%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-pull-9 {
+    position: relative;
+    right: 75%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-push-10 {
+    position: relative;
+    left: 83.33333%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-pull-10 {
+    position: relative;
+    right: 83.33333%;
+    left: auto; }
+
+  /* line 163, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-push-11 {
+    position: relative;
+    left: 91.66667%;
+    right: auto; }
+
+  /* line 166, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-pull-11 {
+    position: relative;
+    right: 91.66667%;
+    left: auto; }
+
+  /* line 171, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column,
+  .columns {
+    position: relative;
+    padding-left: 8px;
+    padding-right: 8px;
+    float: left; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-1 {
+    position: relative;
+    width: 8.33333%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-2 {
+    position: relative;
+    width: 16.66667%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-3 {
+    position: relative;
+    width: 25%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-4 {
+    position: relative;
+    width: 33.33333%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-5 {
+    position: relative;
+    width: 41.66667%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-6 {
+    position: relative;
+    width: 50%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-7 {
+    position: relative;
+    width: 58.33333%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-8 {
+    position: relative;
+    width: 66.66667%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-9 {
+    position: relative;
+    width: 75%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-10 {
+    position: relative;
+    width: 83.33333%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-11 {
+    position: relative;
+    width: 91.66667%; }
+
+  /* line 176, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-12 {
+    position: relative;
+    width: 100%; }
+
+  /* line 179, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  [class*="column"] + [class*="column"]:last-child {
+    float: right; }
+
+  /* line 180, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  [class*="column"] + [class*="column"].end {
+    float: left; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-offset-0 {
+    position: relative;
+    margin-left: 0% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-offset-1 {
+    position: relative;
+    margin-left: 8.33333% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-offset-2 {
+    position: relative;
+    margin-left: 16.66667% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-offset-3 {
+    position: relative;
+    margin-left: 25% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-offset-4 {
+    position: relative;
+    margin-left: 33.33333% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-offset-5 {
+    position: relative;
+    margin-left: 41.66667% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-offset-6 {
+    position: relative;
+    margin-left: 50% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-offset-7 {
+    position: relative;
+    margin-left: 58.33333% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-offset-8 {
+    position: relative;
+    margin-left: 66.66667% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-offset-9 {
+    position: relative;
+    margin-left: 75% !important; }
+
+  /* line 184, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .large-offset-10 {
+    position: relative;
+    margin-left: 83.33333% !important; }
+
+  /* line 186, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .column.large-reset-order,
+  .columns.large-reset-order {
+    margin-left: 0;
+    margin-right: 0;
+    left: auto;
+    right: auto;
+    float: left; }
+
+  /* line 235, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-1 {
+    position: relative;
+    left: 8.33333%;
+    right: auto; }
+
+  /* line 238, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-1 {
+    position: relative;
+    right: 8.33333%;
+    left: auto; }
+
+  /* line 235, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-2 {
+    position: relative;
+    left: 16.66667%;
+    right: auto; }
+
+  /* line 238, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-2 {
+    position: relative;
+    right: 16.66667%;
+    left: auto; }
+
+  /* line 235, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-3 {
+    position: relative;
+    left: 25%;
+    right: auto; }
+
+  /* line 238, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-3 {
+    position: relative;
+    right: 25%;
+    left: auto; }
+
+  /* line 235, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-4 {
+    position: relative;
+    left: 33.33333%;
+    right: auto; }
+
+  /* line 238, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-4 {
+    position: relative;
+    right: 33.33333%;
+    left: auto; }
+
+  /* line 235, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-5 {
+    position: relative;
+    left: 41.66667%;
+    right: auto; }
+
+  /* line 238, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-5 {
+    position: relative;
+    right: 41.66667%;
+    left: auto; }
+
+  /* line 235, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-6 {
+    position: relative;
+    left: 50%;
+    right: auto; }
+
+  /* line 238, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-6 {
+    position: relative;
+    right: 50%;
+    left: auto; }
+
+  /* line 235, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-7 {
+    position: relative;
+    left: 58.33333%;
+    right: auto; }
+
+  /* line 238, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-7 {
+    position: relative;
+    right: 58.33333%;
+    left: auto; }
+
+  /* line 235, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-8 {
+    position: relative;
+    left: 66.66667%;
+    right: auto; }
+
+  /* line 238, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-8 {
+    position: relative;
+    right: 66.66667%;
+    left: auto; }
+
+  /* line 235, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-9 {
+    position: relative;
+    left: 75%;
+    right: auto; }
+
+  /* line 238, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-9 {
+    position: relative;
+    right: 75%;
+    left: auto; }
+
+  /* line 235, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-10 {
+    position: relative;
+    left: 83.33333%;
+    right: auto; }
+
+  /* line 238, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-10 {
+    position: relative;
+    right: 83.33333%;
+    left: auto; }
+
+  /* line 235, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .push-11 {
+    position: relative;
+    left: 91.66667%;
+    right: auto; }
+
+  /* line 238, E:\Work-projects\KiviFitness\code\bower_components\foundation\scss\foundation\components\_grid.scss */
+  .pull-11 {
+    position: relative;
+    right: 91.66667%;
+    left: auto; } }
+/* line 1, ../scss/general/_elements.scss */
+.link-with-icon {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 48px;
+  font-weight: 500; }
+  /* line 6, ../scss/general/_elements.scss */
+  .link-with-icon .menu-and-icon {
+    float: left;
+    position: relative;
+    margin-right: 12px;
+    border: #fff solid 1px;
+    width: 48px;
+    height: 48px;
+    border-radius: 48px; }
+  /* line 15, ../scss/general/_elements.scss */
+  .link-with-icon img {
+    left: 50%;
+    margin: -8px;
+    position: absolute;
+    top: 50%; }
+  /* line 21, ../scss/general/_elements.scss */
+  .link-with-icon.green .menu-and-icon {
+    border-color: #51b644; }
+
+/* line 25, ../scss/general/_elements.scss */
+.link-with-icon-56 {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 56px; }
+  /* line 30, ../scss/general/_elements.scss */
+  .link-with-icon-56 .menu-and-icon {
+    float: left;
+    position: relative;
+    margin-right: 12px;
+    border: #fff solid 1px;
+    width: 56px;
+    height: 56px;
+    border-radius: 56px; }
+  /* line 39, ../scss/general/_elements.scss */
+  .link-with-icon-56 img {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    margin: -12px; }
+  /* line 45, ../scss/general/_elements.scss */
+  .link-with-icon-56.green .menu-and-icon {
+    border-color: #51b644; }
+
+/* line 49, ../scss/general/_elements.scss */
+.text-btn {
+  border: 1px solid white;
+  border-radius: 48px;
+  color: white;
+  display: inline-block;
+  font-family: "robotoregular",Arial;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 48px;
+  padding: 0 16px;
+  text-transform: uppercase; }
+
+/* line 63, ../scss/general/_elements.scss */
+.green-salad-txt {
+  color: #b6d321; }
+
+/* line 1, ../scss/general/layout/_header.scss */
+.header-container {
+  background: url("../img/page/home/home-top-bg-img.jpg") no-repeat scroll center top/auto auto transparent;
+  /*background: url("../img/page/home/home-top-bg-img.jpg") no-repeat scroll center top / auto 100% rgba(0, 0, 0, 0);*/
+  /*min-height:  100vh;*/
+  height: 100vh;
+  position: relative; }
+  /* line 7, ../scss/general/layout/_header.scss */
+  .header-container .kivi-logo {
+    margin-top: 100px;
+    float: left; }
+  /* line 11, ../scss/general/layout/_header.scss */
+  .header-container .top-menu {
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    color: #fff;
+    line-height: 48px; }
+    /* line 17, ../scss/general/layout/_header.scss */
+    .header-container .top-menu a {
+      margin-right: 24px; }
+  /* line 21, ../scss/general/layout/_header.scss */
+  .header-container .main-menu {
+    float: left;
+    padding-top: 126px;
+    margin-left: 64px; }
+    /* line 26, ../scss/general/layout/_header.scss */
+    .header-container .main-menu ul li {
+      list-style-type: none;
+      display: inline-block;
+      margin: 0 35px; }
+      /* line 30, ../scss/general/layout/_header.scss */
+      .header-container .main-menu ul li a {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700; }
+  /* line 38, ../scss/general/layout/_header.scss */
+  .header-container .slogan {
+    clear: left;
+    float: left;
+    padding: 100px 0 0 56px; }
+    /* line 42, ../scss/general/layout/_header.scss */
+    .header-container .slogan p {
+      text-align: right;
+      color: #fff;
+      font-size: 30px;
+      font-weight: 300;
+      line-height: 36px;
+      margin: 0;
+      text-transform: uppercase; }
+      /* line 50, ../scss/general/layout/_header.scss */
+      .header-container .slogan p b {
+        font-size: 36px; }
+  /* line 56, ../scss/general/layout/_header.scss */
+  .header-container .icons-menu .innner-container {
+    bottom: 40px;
+    max-width: 1152px;
+    position: absolute;
+    width: 100%; }
+    /* line 61, ../scss/general/layout/_header.scss */
+    .header-container .icons-menu .innner-container .icon-box {
+      width: 240px;
+      height: 240px;
+      margin: 0 auto 60px;
+      border: rgba(252, 255, 253, 0.4) solid 1px;
+      border-radius: 240px; }
+    /* line 68, ../scss/general/layout/_header.scss */
+    .header-container .icons-menu .innner-container .large-3 {
+      text-align: center; }
+      /* line 70, ../scss/general/layout/_header.scss */
+      .header-container .icons-menu .innner-container .large-3 span {
+        font-family: Roboto Condensed;
+        color: #ffffff;
+        font-size: 22px;
+        font-weight: 400; }
+
+/* line 84, ../scss/general/layout/_header.scss */
+.rozklad-container header {
+  padding-top: 40px; }
+  /* line 86, ../scss/general/layout/_header.scss */
+  .rozklad-container header .rozklad-text {
+    float: left; }
+    /* line 88, ../scss/general/layout/_header.scss */
+    .rozklad-container header .rozklad-text h4 {
+      font-family: Roboto Condensed;
+      color: #1e1e1e;
+      font-size: 38px;
+      line-height: 36px;
+      font-weight: 300;
+      margin: 0;
+      text-transform: uppercase; }
+    /* line 97, ../scss/general/layout/_header.scss */
+    .rozklad-container header .rozklad-text span {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 30px; }
+  /* line 103, ../scss/general/layout/_header.scss */
+  .rozklad-container header .link-with-icon-56 {
+    margin-left: 330px; }
+  /* line 106, ../scss/general/layout/_header.scss */
+  .rozklad-container header select {
+    float: right;
+    margin-top: 16px;
+    width: 240px; }
+/* line 112, ../scss/general/layout/_header.scss */
+.rozklad-container .rozklad-table {
+  padding: 50px 24px 50px 24px;
+  overflow: hidden; }
+  /* line 115, ../scss/general/layout/_header.scss */
+  .rozklad-container .rozklad-table .table-row {
+    position: relative;
+    margin-bottom: 20px; }
+    /* line 118, ../scss/general/layout/_header.scss */
+    .rozklad-container .rozklad-table .table-row .zal-number {
+      width: 56px;
+      height: 56px;
+      line-height: 17px;
+      padding-top: 8px;
+      border: red solid 2px;
+      border-radius: 56px;
+      text-align: center;
+      font-family: Roboto Condensed;
+      font-weight: 700;
+      z-index: 2;
+      position: relative;
+      background: #fff;
+      float: left;
+      margin-top: 6px; }
+      /* line 133, ../scss/general/layout/_header.scss */
+      .rozklad-container .rozklad-table .table-row .zal-number span {
+        font-size: 15px; }
+        /* line 135, ../scss/general/layout/_header.scss */
+        .rozklad-container .rozklad-table .table-row .zal-number span span {
+          color: #999999 !important;
+          font-weight: 300; }
+    /* line 141, ../scss/general/layout/_header.scss */
+    .rozklad-container .rozklad-table .table-row .line {
+      height: 2px;
+      position: absolute;
+      top: 34px;
+      width: 100%;
+      z-index: 1; }
+    /* line 149, ../scss/general/layout/_header.scss */
+    .rozklad-container .rozklad-table .table-row .hours-entry-contanier {
+      padding-left: 106px; }
+      /* line 151, ../scss/general/layout/_header.scss */
+      .rozklad-container .rozklad-table .table-row .hours-entry-contanier .entry-box {
+        display: inline-block;
+        height: 80px;
+        min-width: 160px;
+        overflow: hidden;
+        position: relative; }
+        /* line 157, ../scss/general/layout/_header.scss */
+        .rozklad-container .rozklad-table .table-row .hours-entry-contanier .entry-box .hour {
+          display: block;
+          margin-bottom: 24px;
+          color: #999999;
+          font-size: 24px;
+          font-weight: 300; }
+        /* line 164, ../scss/general/layout/_header.scss */
+        .rozklad-container .rozklad-table .table-row .hours-entry-contanier .entry-box .name {
+          display: block;
+          color: #1e1e1e;
+          font-size: 14px;
+          font-weight: 300; }
+        /* line 170, ../scss/general/layout/_header.scss */
+        .rozklad-container .rozklad-table .table-row .hours-entry-contanier .entry-box .short-description {
+          display: none; }
+        /* line 177, ../scss/general/layout/_header.scss */
+        .rozklad-container .rozklad-table .table-row .hours-entry-contanier .entry-box.current:after {
+          content: " ";
+          display: block;
+          background: red;
+          width: 10px;
+          height: 10px;
+          border-radius: 10px;
+          position: absolute;
+          left: 0;
+          top: 0; }
+    /* line 191, ../scss/general/layout/_header.scss */
+    .rozklad-container .rozklad-table .table-row.zal-1 .zal-number {
+      border-color: #51b644; }
+      /* line 193, ../scss/general/layout/_header.scss */
+      .rozklad-container .rozklad-table .table-row.zal-1 .zal-number span {
+        color: #51b644; }
+    /* line 197, ../scss/general/layout/_header.scss */
+    .rozklad-container .rozklad-table .table-row.zal-1 .line {
+      background-color: #51b644; }
+    /* line 200, ../scss/general/layout/_header.scss */
+    .rozklad-container .rozklad-table .table-row.zal-2 .zal-number {
+      border-color: #dfb25f; }
+      /* line 202, ../scss/general/layout/_header.scss */
+      .rozklad-container .rozklad-table .table-row.zal-2 .zal-number span {
+        color: #dfb25f; }
+    /* line 206, ../scss/general/layout/_header.scss */
+    .rozklad-container .rozklad-table .table-row.zal-2 .line {
+      background-color: #dfb25f; }
+    /* line 209, ../scss/general/layout/_header.scss */
+    .rozklad-container .rozklad-table .table-row.zal-3 .zal-number {
+      border-color: #b6d321; }
+      /* line 211, ../scss/general/layout/_header.scss */
+      .rozklad-container .rozklad-table .table-row.zal-3 .zal-number span {
+        color: #b6d321; }
+    /* line 215, ../scss/general/layout/_header.scss */
+    .rozklad-container .rozklad-table .table-row.zal-3 .line {
+      background-color: #b6d321; }
+
+/* line 221, ../scss/general/layout/_header.scss */
+* {
+  display: none !important; }
+
+/* line 1, ../scss/general/layout/_body.scss */
+html {
+  height: 100%; }
+
+/* line 4, ../scss/general/layout/_body.scss */
+html,
+body {
+  min-height: 100%;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-size: 16px; }
+
+/* line 11, ../scss/general/layout/_body.scss */
+body {
+  background-color: #fff;
+  font-family: Roboto, sans-serif;
+  font-weight: 300; }
+
+/* line 16, ../scss/general/layout/_body.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: roboto_condensedregular, sans-serif;
+  font-weight: 400;
+  margin: 12px 0;
+  padding: 0; }
+
+/* line 28, ../scss/general/layout/_body.scss */
+body > * {
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s; }
+
+/* line 31, ../scss/general/layout/_body.scss */
+body:not(.loaded) > * {
+  opacity: 0; }
+
+/* line 35, ../scss/general/layout/_body.scss */
+a {
+  text-decoration: none;
+  color: inherit; }
+
+/* line 1, ../scss/general/layout/_footer.scss */
+footer {
+  height: 272px;
+  background: -webkit-linear-gradient(75deg, #1a1b1e 36%, #2a2c2e 64%);
+  background: linear-gradient(15deg, #1a1b1e 36%, #2a2c2e 64%); }
+
+/* ie8 */

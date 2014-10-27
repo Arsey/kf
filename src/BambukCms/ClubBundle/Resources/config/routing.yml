@@ -1,0 +1,15 @@
+bambuk_cms_club_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: BambukCmsClubBundle:Default:index }
+
+bambuk_cms_club_homepage_get:
+    path:     /salle/getSchedule
+    defaults: { _controller: BambukCmsClubBundle:ScheduleGrid:getSchedule }
+
+bambuk_cms_club_homepage_get_program:
+    path:     /salle/getScheduleProgram
+    defaults: { _controller: BambukCmsClubBundle:ScheduleGrid:getScheduleProgram }
+
+bambuk_cms_club_homepage_set:
+    path:     /salle/setSchedule
+    defaults: { _controller: BambukCmsClubBundle:ScheduleGrid:setSchedule }        

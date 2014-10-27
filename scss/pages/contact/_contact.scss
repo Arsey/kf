@@ -1,0 +1,121 @@
+.contact  {
+    position: relative;
+    height: 100vh;
+    .content{
+        padding: 24px;
+        .title {
+            margin: 12px 0 12px 0;
+        }
+        p{
+            line-height: 24px;
+            margin: 12px 0;
+        } 
+        @media #{$screen} and (min-width:1900px) {
+            padding: 32px;
+            p{
+                font-size: rem-calc(16);
+            }     
+        }
+    }
+    
+    .route-link{
+        &:before { 
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 2px solid $darkblue;
+            border-width: 3px  2px 2px 3px;
+            opacity: 0;
+            transform: translateZ(0);
+            transition: opacity .3s;
+        }
+        .title{
+            font-size: rem-calc(18);
+            padding: 24px;
+            @media #{$medium}{
+                padding: 0;
+            }
+        }
+        &:hover:before{
+            opacity: 1;
+        }
+    }
+    
+    &.focus {
+        .info { 
+            position: relative;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity .6s, z-index 0 .6s;
+        }
+        #map {
+            pointer-events: all;
+            display: block;
+        }
+    }
+    @media #{$medium}{
+        .white-box{
+            background: $white;
+            padding-top: 100/4 * 1%;
+            &>*{
+                @include in-squre();
+            }
+        }
+        .info-text{
+            // set on top of grid and hide difference =)
+            z-index: 1;
+            border: 1px solid #96AAB2;
+            border-width: 1px 0 1px 1px;
+            padding-top: calc( 50% - 1px );
+        }
+        .info {
+            transition: opacity .3s, z-index 0;
+        }
+        .route-link-holder{
+            margin-top: 100/4 * 1%;
+        }
+        .plchld-1,
+        .plchld-2,
+        .plchld-3,
+        .plchld-4,
+        .plchld-5{
+            position: absolute !important;
+        }
+        .plchld-1{
+            top:50%;
+            opacity: .5;
+        }
+        .plchld-2 {
+            top: 100%;
+            opacity: .5;
+        }
+        .plchld-3 {
+            left: 75%;
+            opacity: .8;
+        }
+        .plchld-4 {
+            left: 100%;
+            opacity: .5;
+        }
+        .plchld-5 {
+            left: 50%;
+            bottom:100%;
+            opacity: .8;
+        }
+    }
+
+}
+#map {
+    pointer-events: none;
+    display: none;
+    @include fill-block;
+    @media #{$medium}{
+        
+        display: block;        
+    }
+}
+      

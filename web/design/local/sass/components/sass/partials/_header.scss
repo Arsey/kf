@@ -1,0 +1,34 @@
+
+#header {
+	height: $line*27;
+	z-index: 1;
+	position: relative;
+	@include box-shadow(0 1px 4px rgba(0, 0, 0, 0.3), 0 0 em(14,40) rgba(0, 0, 0, 0.1) inset);
+	&:before, &:after {
+		content: "";
+		position: absolute;
+		z-index: -2;
+		bottom: em(14,7);
+		left: 0px;
+		width: 50%;
+		height: 9%;
+		max-width: 1000px;
+		@include box-shadow(0 em(14,15) em(14,30) rgba(0, 0, 0, 0.5));
+		@include transform(rotate(-1deg));
+		&.header_after_block {
+			display: block!important;
+		}
+	}
+	&:after {
+		right: 0px;
+		left:auto;
+		@include transform(rotate(1deg));
+	}
+	@media only screen and (max-width: 360px) {
+		background: image-url('bg_mobi.png');
+		@include box-shadow(none);
+		&:before, &:after {
+			display: none;
+		}
+	}
+}

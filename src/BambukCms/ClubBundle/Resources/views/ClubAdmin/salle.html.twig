@@ -1,0 +1,6 @@
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+{% block field %}
+{% spaceless %}
+	<a href='/admin/bambukcms/club/salle/list?club={{ object.id }}'>Зали</a>
+{% endspaceless %}
+{% endblock %}

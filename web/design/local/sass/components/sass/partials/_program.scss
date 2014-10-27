@@ -1,0 +1,77 @@
+
+.program_win {
+	overflow: hidden;
+	margin: 0 auto;
+
+	@media screen and ( max-width: 960px ) {
+		width: em(14,560);
+	}
+	@media screen and ( min-width: 534px ) and ( max-width: 600px ) {
+		width: em(14,480);
+	}
+	@media screen and ( max-width: 533px ) {
+		width: em(14,320);
+	}
+
+	li {
+		float: left;
+		width: 16.66667%;
+		height: em(14,173);
+		position: relative;
+		margin-top: $line/2;
+		&:first-child {
+			@include bg-retina(none, image-url('program_win/program_1.png', true), png, auto, auto, center top, no-repeat);
+			&:hover, &:active, &:focus, &.active {
+				@include bg-retina(none, image-url('program_win/program_1_hover.png', true), png, auto, auto, center top, no-repeat);
+			}
+		}
+		&:first-child + li {
+			@include bg-retina(none, image-url('program_win/program_2.png', true), png, auto, auto, center top, no-repeat);
+			&:hover, &:active, &:focus, &.active {
+				@include bg-retina(none, image-url('program_win/program_2_hover.png', true), png, auto, auto, center top, no-repeat);
+			}
+		}
+		&:first-child + li + li {
+			@include bg-retina(none, image-url('program_win/program_3.png', true), png, auto, auto, center top, no-repeat);
+			&:hover, &:active, &:focus, &.active {
+				@include bg-retina(none, image-url('program_win/program_3_hover.png', true), png, auto, auto, center top, no-repeat);
+			}
+		}
+		&:first-child + li + li + li {
+			@include bg-retina(none, image-url('program_win/program_4.png', true), png, auto, auto, center top, no-repeat);
+			&:hover, &:active, &:focus, &.active {
+				@include bg-retina(none, image-url('program_win/program_4_hover.png', true), png, auto, auto, center top, no-repeat);
+			}
+		}
+		&:first-child + li + li + li + li {
+			@include bg-retina(none, image-url('program_win/program_5.png', true), png, auto, auto, center top, no-repeat);
+			&:hover, &:active, &:focus, &.active {
+				@include bg-retina(none, image-url('program_win/program_5_hover.png', true), png, auto, auto, center top, no-repeat);
+			}
+		}
+		&:first-child + li + li + li + li + li {
+			@include bg-retina(none, image-url('program_win/program_6.png', true), png, auto, auto, center top, no-repeat);
+			&:hover, &:active, &:focus, &.active {
+				@include bg-retina(none, image-url('program_win/program_6_hover.png', true), png, auto, auto, center top, no-repeat);
+			}
+		}
+
+		@media screen and ( max-width: 960px ) {
+			width: 33.3333%;
+		}
+		@media screen and ( max-width: 533px ) {
+			width: 50%;
+		}
+
+		a {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			color: #fff;
+			font-weight: bold;
+			padding-top: em(14,137);
+			line-height: $h2_size;
+		}
+	}
+}

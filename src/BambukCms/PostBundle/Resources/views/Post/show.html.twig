@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    {% block menu %}
+    	{% include "BambukCmsContentBundle:Content:menu.html.twig" with { product: 1 } %}
+    {% endblock %}
+{% block content %}
+    <article class="post">
+        <header>
+            <h1>{{ post.title }}</h1>
+        </header>
+        <img height="180px" src="{{ post.image }}" alt="{{ post.title }}" />
+        <div>
+        {% autoescape %}
+         	{{ post.content|raw }}
+        {% endautoescape %}
+        </div>
+    </article>
+{% endblock %}
+{% endblock %}
+{% block javascripts %}{% endblock %}

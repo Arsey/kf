@@ -1,0 +1,41 @@
+
+#footer {
+	border-top: 1px solid #CBD78E;
+	background: image-url('footer.png');
+	color: $color_wite;
+	font-size: $p_size;
+
+	@media only screen and (max-width: 533px) {
+		padding: em(14,10) 0;
+	}
+
+	a {
+		color: $color_wite;
+		margin: em(14,15) 0;
+
+		@media only screen and (max-width: 533px) {
+			margin: 0;
+		}
+
+	}
+	.copiring {
+		@media only screen and (max-width: 768px) {
+			width: 40%;
+		}
+		@media only screen and (max-width: 533px) {
+			width: 100%;
+			text-align: center;
+		}
+	}
+	.developed {
+		text-align: right;
+
+		@media only screen and (max-width: 768px) {
+			width: 60%;
+		}
+		@media only screen and (max-width: 533px) {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

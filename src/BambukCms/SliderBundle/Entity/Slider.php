@@ -1,0 +1,260 @@
+<?php
+
+namespace BambukCms\SliderBundle\Entity;
+
+use Doctrine\Common\Collections\ArrayCollection;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Translatable\Translatable;
+use Gedmo\Translatable\TranslatableListener;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="slider")
+ * @Gedmo\TranslationEntity(class="BambukCms\SliderBundle\Entity\SliderTranslation")
+ */
+class Slider
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(length=250)
+     */
+    private $title;
+
+    /**
+     * @Gedmo\Translatable
+     * @ORM\Column(type="text", nullable=true)
+     */    
+    private $description;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
+     */
+    private $image;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image_min", type="string", length=255, nullable=true)
+     */
+    private $image_min;    
+    
+    /**
+     * @ORM\Column(name="active", type="boolean", nullable=true)
+     */
+    protected $active;
+
+    /**
+     * @ORM\Column(name="sort", type="integer")
+     */
+    private $sort = 0;
+    
+    /**
+     * @ORM\OneToMany(
+     *   targetEntity="BambukCms\SliderBundle\Entity\SliderTranslation",
+     *   mappedBy="object",
+     *   cascade={"persist", "remove"}
+     * )
+     */
+    private $translations;
+    
+    /**
+     * Initialization properties for new post entity
+     */
+    public function __construct()
+    {
+    	$this->translations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+   
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Post
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Post
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Post
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     * @return Post
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean 
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Set sort
+     *
+     * @param integer $sort
+     * @return Post
+     */
+    public function setSort($sort)
+    {
+        $this->sort = $sort;
+
+        return $this;
+    }
+
+    /**
+     * Get sort
+     *
+     * @return integer 
+     */
+    public function getSort()
+    {
+        return $this->sort;
+    }
+
+    public function getTranslations()
+    {
+        return $this->translations;
+    }
+
+    public function addTranslation(SliderTranslation $t)
+    {
+        if (!$this->translations->contains($t)) {
+            $this->translations[] = $t;
+            $t->setObject($this);
+        }
+    }
+
+
+   
+
+    /**
+     * Remove translations
+     *
+     * @param \BambukCms\SliderBundle\Entity\SliderTranslation $translations
+     */
+    public function removeTranslation(\BambukCms\SliderBundle\Entity\SliderTranslation $translations)
+    {
+        $this->translations->removeElement($translations);
+    }
+
+   
+
+    /**
+     * Set image_min
+     *
+     * @param string $imageMin
+     * @return Slider
+     */
+    public function setImageMin($imageMin)
+    {
+        $this->image_min = $imageMin;
+
+        return $this;
+    }
+
+    /**
+     * Get image_min
+     *
+     * @return string 
+     */
+    public function getImageMin()
+    {
+        return $this->image_min;
+    }
+}

@@ -1,0 +1,329 @@
+
+
+
+
+
+
+// шапка сайту
+
+.preheader {
+	margin-bottom: em(14,12);
+	margin-top: em(14,-14) !important;
+	p, a {
+		color: $color_text;
+		font-size: em(14,15);
+		line-height: 2em;
+		font-family: $family;
+		text-decoration: none;
+		line-height: em(14,37);
+
+		@media only screen and (max-width: 360px) {
+			color: #fff;
+		}
+	}
+
+	@media only screen and (max-width: 768px) {
+		margin-top: em(14,-10) !important;
+		margin: 0 auto;
+	}
+	@media only screen and (max-width: 601px) {
+		width: em(14,322);
+	}
+	@media only screen and (max-width: 600px) {
+		margin-bottom: em(14,5);
+	}
+}
+
+
+	.preheader_left {
+		// outline: 1px solid;
+		width: 33.4444%;
+		padding: 0;
+		padding: 0 0.57143em;
+
+		@media only screen and (min-width: 601px) and (max-width: 768px) {
+			width: 42%;
+			float: left;
+		}
+		@media only screen and (max-width: 600px) {
+			width: 60%;
+		}
+
+	}
+	.preheader_right {
+		// outline: 1px solid;
+		width: 66%;
+
+		@media only screen and (min-width: 601px) and (max-width: 768px) {
+			width: 58%;
+			float: right;
+		}
+		@media only screen and (max-width: 600px) {
+			width: 40%;
+		}
+
+	}
+
+		// вхід на сайт
+
+		.entrance {
+			background: image-url('entrance.png') no-repeat left center;
+			width: 46%;
+			text-align: left;
+			padding-left: em(14,43);
+			float: left;
+			height: em(14,35);
+			a {
+				@media only screen and (max-width: 601px) {
+					color: #00883F;
+				}
+			}
+
+			@media only screen and (max-width: 601px) {
+				background: none;
+				width: 30%;
+				padding-left: 0;
+				float: left;
+				height: auto;
+			}
+
+			// @media only screen and (max-width: 600px) {
+			// 	background-size: 26px;
+			// }
+			// @media only screen and (max-width: 320px) {
+			// 	background: none;
+			// 	padding-left: 0px;
+			// }
+
+			// @media only screen and (max-width: 768px) {
+			// 	background: none;
+			// 	width: 0px;
+			// }
+			// @media only screen and (min-width: 769px) {
+			// 	height: 34px;
+			// 	a {
+			// 		line-height: 34px;
+			// 		font-size: 14px;
+			// 	}
+			// }
+		}
+
+		// номер телефону
+
+		.numder {
+			background: image-url('number.png') no-repeat left center;
+			width: 54%;
+			float: right;
+			height: em(14,35);
+			text-align: right;
+
+			@media only screen and (max-width: 601px) {
+				background: none;
+				width: 70%;
+				height: auto;
+				padding-left: 0;
+				text-align: left;
+				float: right;
+			}
+
+			// @media only screen and (max-width: 600px) {
+			// 	background-size: 26px;
+			// 	float: left;
+			// }
+			// @media only screen and (max-width: 320px) {
+			// 	background: none;
+			// }
+
+			// @media only screen and (min-width: 769px) {
+			// 	height: 34px;
+			// 	float: right;
+			// 	p {
+			// 		padding-left: 45px;
+			// 		line-height: 34px;
+			// 		font-size: 14px;
+			// 	}
+			// }
+			// // @media only screen and (max-width: 768px) {
+			// // 	background: none;
+			// // 	margin-left: 24%;
+			// // }
+		}
+
+
+// мовна понель
+
+.language {
+	margin-left: $line;
+	overflow: hidden;
+	float: right;
+	a {
+		font-size: $p_size;
+		float: right;
+		margin-left: em(14,8);
+		&:hover, &:active, &.active {
+			text-decoration: underline;
+			color: $color_span;
+		}
+
+		@media only screen and (max-width: 600px) {
+			font-size: em(14,14);
+			&:hover, &:active, &.active {
+				color: #00883F;
+			}
+		}
+
+	}
+
+	@media only screen and (max-width: 600px) {
+		margin: 0 auto;
+		float: none;
+		width: 100%;
+	}
+
+}
+
+
+
+
+
+
+
+// онлайн консультація
+
+.consultation {
+	height: $line*3;
+	background: image-url('consultation.png') no-repeat left center;
+	position: relative;
+	margin-bottom: em(14,15);
+	&:hover {
+		background: image-url('consultation_hover.png') no-repeat left center;
+	}
+
+	@media screen and ( max-width: 600px ) {
+		display: none;
+	}
+
+	a {
+		color: $color_wite;
+		font-weight: bold;
+		text-decoration: none;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		padding-left: em(14,82);
+		padding-top: em(14,15);
+
+		@media screen and ( min-width: 601px ) and ( max-width: 768px )  {
+			padding-left: em(14,52);
+			padding-top: em(14,2);
+		}
+	}
+
+	@media screen and ( min-width: 601px ) and ( max-width: 768px )  {
+		height: em(14,43);
+		@include background-size(em(14,41));
+		width: em(14,176);
+		float: right;
+		&:hover {
+			@include background-size(em(14,41));
+		}
+	}
+	@media screen and ( max-width: 600px ) {
+		height: em(14,98);
+		background: image-url('consultation.png') no-repeat top center;
+		text-align: center;
+		@include background-size(em(14,38));
+		max-width: em(14,305);
+		margin: em(14,14) auto 0;
+		&:hover {
+			background: image-url('consultation_hover.png') no-repeat top center;
+			@include background-size(em(14,38));
+		}
+		a {
+			padding-top: em(14,49);
+			padding-left: 0px;
+		}
+	}
+}
+.consultation_2 {
+	display: none;
+	
+	@media screen and ( max-width: 768px ) {
+		display: block;
+		position: absolute;
+		right: 0px;
+		width: em(14,210);
+		margin-top: em(14,6);
+		line-height: em(14,46);
+		text-align: right;
+		color: #fff;
+		background: image-url('consultation.png') no-repeat left center;
+		background-size: em(14,46);
+		z-index: 1;
+		margin-right: 0.57143em;
+		&:hover {
+			background: image-url('consultation_hover.png') no-repeat left center;
+			background-size: em(14,46);
+		}
+	}
+	@media screen and ( max-width: 600px ) {
+		display: none;
+	}
+
+}
+
+
+// гасло 
+
+.motto {
+	background: image-url('motto.png') no-repeat center center;
+	width: em(14,176);
+	height: em(14,155);
+	position: absolute;
+	left: em(14,355);
+	top: em(14,-92);
+	z-index: 0;
+
+	@media screen and ( min-width: 601px ) and ( max-width: 768px )  {
+		left: em(14,272);
+		top: em(14,-99);
+	}
+	@media only screen and (max-width: 600px) {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .row {
+// 	outline: 1px solid #fff;
+// }

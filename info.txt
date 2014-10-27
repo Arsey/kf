@@ -1,0 +1,50 @@
+php app/console cache:clear --env=prod -чистка кешу
+
+php app/console generate:bundle --namespace=BambukCms/PostBundle --format=yml
+
+php app/console generate:doctrine:form BambukCmsPageBundle:Page create form
+
+php app/console doctrine:generate:entity --entity="BambukCmsPageBundle:Page"- створення класа створення yml або xml або анотації
+
+php app/console doctrine:generate:entities BambukCmsPageBundle:Page- оновлення даних з бандла створення (сетерів та гетів)
+
+php app/console doctrine:schema:update --force - оновлення бд
+
+php app/console doctrine:fixtures:load - завантаження фікстури
+
+instal composer
+
+curl -s http://getcomposer.org/installer | php
+php composer.phar install
+composer update - Оновлення композера
+
+Transtable
+StofDoctrineExtensionsBundle
+
+Instal web:
+php app/console assets:install web
+
+Sonata and Fos User Bundle:
+http://symfony2.ylly.fr/sonataadminbundle-fosuserbundle-have-a-good-base-project-jordscream/
+http://blog.dayo.fr/2012/12/symfony2-1-sonata-admin-sonata-user-fos-userbundle-en/
+
+php app/console sonata:easy-extends:generate SonataUserBundle
+
+
+create New Bundle with Sonata
+http://www.ens.ro/2012/07/13/symfony2-jobeet-day-12-the-admin-bundle/
+
+
+php app/console fos:user:create admin admin@example.com admin --super-admin
+
+Tine MCE Bundle
+https://github.com/stfalcon/TinymceBundle
+
+
+I18N:
+php app/console translation:extract ru --bundle=BambukCmsPageBundle --default-output-format=po
+
+get culture
+{{ app.request.get('_locale') }}
+
+

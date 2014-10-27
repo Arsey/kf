@@ -1,0 +1,127 @@
+
+#slider {
+	position: absolute;
+	width: 100%;
+	height: $line*27;
+	z-index: 0;
+	-webkit-backface-visibility: hidden;
+	& > div {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		@include opacity(0);
+		z-index: -1;
+		@include transition(opacity 2s);
+		&.active {
+			z-index: 0;
+			@include opacity(1);
+			&:after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: em(14,120);
+				bottom: 0;
+				background: image-url('bg_shadow.png') repeat-x bottom center;
+				z-index: 0;
+			}
+			&:before {
+				content: "";
+				background: image-url('torez.png') repeat-x bottom center;
+				width: 100%;
+				position: absolute;
+				bottom: 0px;
+				height: em(14,10);
+				z-index: 1;
+			}
+		}
+	}
+	.slide_1 {
+		background: image-url('resource/img1.jpg') no-repeat top center;
+	}
+	.slide_2 {
+		background: image-url('resource/img2.jpg') no-repeat top center;
+	}
+	.slide_3 {
+		background: image-url('resource/img3.jpg') no-repeat top center;
+	}
+
+	@media screen and ( max-width: 720px ) {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// відео
+#header {
+	.video {
+		height: em(14,404);
+		background: rgba(255, 255, 255, 0.3);
+		position: relative;
+		overflow: hidden;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dffffff', endColorstr='#4dffffff',GradientType=0 );
+		a {
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: image-url('play_video.png') no-repeat center center;
+		}
+		&:hover {
+			&:after {
+				background: image-url('play_video_hover.png') no-repeat center center;
+			}
+		}
+
+	}
+		@media only screen and (max-width: 768px) {
+			width: 58%;
+		}
+		@media only screen and (max-width: 720px) {
+			display: none;
+		}
+	}
+}
+
+	// нумерація віде
+	.nember_video {
+		float: right;
+		max-width: em(14,310);
+		margin-top: em(18,3);
+
+		@media only screen and (max-width: 720px) {
+			display: none;
+		}
+
+		li {
+			float: left;
+			text-align: center;
+			margin-left: em(14,8);
+			a {
+				font-size: 18px;
+				color: $color_span;
+				height: em(18,32);
+				width:  em(18,32);
+				line-height:  em(18,30);
+				text-align: center;
+				@include border-radius(em(14,32));
+				border: 1px solid #fff;
+				&:hover, &:active, &.active {
+					background: #fff;
+					@include opacity(0.8);
+				}
+			}
+		}
+	}

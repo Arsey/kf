@@ -1,0 +1,79 @@
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+<script type="text/javascript" src="/adaptive_editor/bower_components/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/adaptive_editor/js/Sortable.min.js"></script>
+<script type="text/javascript" src="/adaptive_editor/js/responsive-editor.js"></script>
+<style>
+.ui-dialog{
+	top: 0 !important;
+	z-index: 9990 !important;
+}
+.adaptiveEditor{
+	display:none;
+}
+</style>
+<div class="editor_adaptive_window" style="display:none">
+	<div id="holder">
+	    <form style="text-align:center; margin:20px 0px" name="breakpointChange" id="breakpointChange">
+	            <input type="radio" value="large" name="breakpoint" checked> <label for="large">large </label>
+	            <input type="radio" value="medium" name="breakpoint"> <label for="medium">medium </label>
+	            <input type="radio" value="small" name="breakpoint"> <label for="small">small </label>
+	    </form>
+	</div>
+	 <button id="saveDataEditor">Зберегти</button>
+<div>	 
+<script  type="text/javascript">
+	var width = $(window).width();
+	var height = $(window).height();
+	$(".adaptiveEditor").each(function() {
+		if(!$(this).parent().find('.adaptiveEditorLink').text()){
+			$(this).parent().append( "<a class='adaptiveEditorLink' href='#'>Редагувати контент</a>" );
+		}
+	});    
+	$(".adaptiveEditorLink").on('click',function() {
+	    $('#holder iframe').remove();
+		var elementTextArea=$(this).prev();
+		if($(this).parents(".sonata-ba-collapsed-fields").find('.adaptiveEditorHtml')){
+			var elementContentHtml=$(this).parents(".sonata-ba-collapsed-fields").find('.adaptiveEditorHtml');
+		}else if($(".adaptiveEditorLink").parents("#translations-tabs-translations-ru").find('.adaptiveEditorHtml')){
+			var elementContentHtml=$(this).parents("#translations-tabs-translations-ru").find('.adaptiveEditorHtml');
+		}
+		var strEdiror=$(this).prev().text();
+	$('.editor_adaptive_window').dialog({
+	     height: height,
+	     width: width,
+		 title: "Адаптивний редактор",
+	 });  
+	    ResponsiveEditor.cssPath = '/adaptive_editor/css/editor.css'
+	    if(strEdiror!=''){
+	   		 var adaptiveEditor = new ResponsiveEditor(document.getElementById('holder'),strEdiror);
+	    }else{
+	    	 var adaptiveEditor = new ResponsiveEditor(document.getElementById('holder'));
+	    }
+		      
+	    $("#breakpointChange .iCheck-helper").remove();
+	    $( "input[name='breakpoint']").each(function() {
+	    	$(this).prop('checked', false);
+	    	$(this).css({'position':'static','opacity':'1'});
+	    });
+	 	document.getElementById('breakpointChange').onchange = function(){
+		        for(var button in document.getElementById('breakpointChange').breakpoint){
+		            if(document.getElementById('breakpointChange').breakpoint[button].checked){
+		                var selected = document.getElementById('breakpointChange').breakpoint[button].value;
+		                $("#breakpointChange input").each(function() {
+							$(this).prop('checked', false);
+						});
+		            }
+		        }
+		adaptiveEditor.changeBreakpoint(selected);
+		}; 
+		$('#saveDataEditor').on('click',function(event){
+		   event.preventDefault();
+		   var content= adaptiveEditor.serialize();
+		   elementTextArea.html(content);
+		   adaptiveEditor.renderTo(elementContentHtml,'input');
+		   $('.editor_adaptive_window').dialog('close');
+	    	  
+		});
+});
+</script>
+			

@@ -1,0 +1,79 @@
+
+
+// mixin for animation
+@mixin animation ($delay, $duration, $name, $iteration-count) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $name;
+    -webkit-animation-iteration-count: $iteration-count;
+    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+ 
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $name;
+    -moz-animation-iteration-count: $iteration-count;
+    -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+ 
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $name;
+    -o-animation-iteration-count: $iteration-count;
+    -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    -ms-animation-delay: $delay;
+    -ms-animation-duration: $duration;
+    -ms-animation-name: $name;
+    -ms-animation-iteration-count: $iteration-count;
+    -ms-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+ 
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $name;
+    animation-iteration-count: $iteration-count;
+    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+
+
+// function for em
+@function em($b,$n) {
+    @return ($n / $b)*1em;
+}
+
+
+
+// mixin for retina
+@mixin bg-retina($bg_color, $file, $type, $width, $height, $position, $repeat) {
+
+    background-image: url($file + '.' + $type);
+
+    background-size: $width $height; 
+    background-position: $position;
+    background-repeat: $repeat;
+    background-color: $bg_color;
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi) {
+    & {
+      background-image: url($file + '_2x.' + $type);
+      
+    }
+  }
+}
+
+
+// linear-gradient
+@mixin linear-gradient($top,$bottom){
+    background-image: -ms-linear-gradient(top, $top 0%, $bottom 100%);
+    @include background(linear-gradient(top, $top 0%, $bottom 100%));
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top', endColorstr='$bottom',GradientType=0 );
+}
+
+
+
+
+
+
+
+
+
+
+
