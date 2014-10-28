@@ -217,7 +217,7 @@ stfalcon_tinymce:
     include_jquery: true
     tinymce_jquery: true
     selector: ".tinymce"
-    base_url: "http://kivi.loc/"
+    base_url: "http://localhost/" 
     language: %locale%
 #    external_plugins:
 # external_filemanager_path:"/uploads/"       

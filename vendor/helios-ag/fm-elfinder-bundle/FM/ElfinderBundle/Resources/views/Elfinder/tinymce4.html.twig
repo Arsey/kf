@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% if includeAssets %}
+    {% include "FMElfinderBundle:Elfinder:helper/assets_css.html.twig" %}
+{% endif %}
+</head>
+<body>
+{% if includeAssets %}
+    {% include "FMElfinderBundle:Elfinder:helper/assets_js.html.twig" %}
+{% endif %}
+<script type="text/javascript" charset="utf-8">
+    var FileBrowserDialogue = {
+        init: function () {
+            // Here goes your code for setting your custom things onLoad.
+        },
+        mySubmit: function (URL) {
+            // pass selected file path to TinyMCE
+            top.tinymce.activeEditor.windowManager.getParams().setUrl(URL);
+
+            // close popup window
+            top.tinymce.activeEditor.windowManager.close();
+        }
+    };
+
+    $(document).ready(function() {
+        var elf = $('#elfinder').elfinder({
+            // set your elFinder options here
+            url: '{{ path('ef_connect') }}',  // connector URL
+            lang : '{{ locale }}',
+            getFileCallback: function(file) { // editor callback
+                FileBrowserDialogue.mySubmit(file.url); // pass selected file path to TinyMCE
+            }
+        }).elfinder('instance');
+    });
+</script>
+<div id="elfinder"></div>
+</body>
+</html>
